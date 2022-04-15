@@ -24,7 +24,7 @@ namespace Problem3
             s = Console.ReadLine();
 
             //revs , in I stochez ultimul si merg pana la inceput
-            //parcurg descrescator cuvantul
+            //parcurg invers cuvantul
             for(int i = s.Length-1; i >=0; i--)
             {
                 //rescriu cuvantul invers caracter cu caracter
