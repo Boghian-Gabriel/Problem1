@@ -21,7 +21,7 @@ namespace Problem1
             string[] myArray = elem.Split(',');
 
             Array arr = myArray;
-
+   
             Array.Sort(arr);
             Console.WriteLine("Alphabetical sorted array: \n");
             int contor = 0;

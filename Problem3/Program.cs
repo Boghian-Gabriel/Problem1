@@ -10,7 +10,7 @@ namespace Problem3
     {
         /*
          <-Main aspects->
-         1. This program verify is a string is palindrom or not.
+         1. This program verify/checks  is a string is palindrom or not.
          2. In the second step, this program checks if the word written reverse is equal to the original string.
          3. In the last step, same program return a message with this value: true or false.
          4. Tommorow, i will rewrite this program tomorrow, because I want to, and I'll put some of the code into a function and then call it from the main function.
