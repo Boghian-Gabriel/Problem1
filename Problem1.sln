@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CifreleUnuiNumar", "Cifrele
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OglinditulUnuiNumar", "OglinditulUnuiNumar\OglinditulUnuiNumar.csproj", "{CFCA01AD-D809-46EA-A782-35988AEC864A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFactorial", "NFactorial\NFactorial.csproj", "{459FA3DA-8241-464C-BC50-5FEE83270BB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzz", "FizzBuzz\FizzBuzz.csproj", "{C1F9072D-297E-41C4-9B55-A45585AE5044}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{CFCA01AD-D809-46EA-A782-35988AEC864A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFCA01AD-D809-46EA-A782-35988AEC864A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFCA01AD-D809-46EA-A782-35988AEC864A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{459FA3DA-8241-464C-BC50-5FEE83270BB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{459FA3DA-8241-464C-BC50-5FEE83270BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{459FA3DA-8241-464C-BC50-5FEE83270BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{459FA3DA-8241-464C-BC50-5FEE83270BB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1F9072D-297E-41C4-9B55-A45585AE5044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1F9072D-297E-41C4-9B55-A45585AE5044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1F9072D-297E-41C4-9B55-A45585AE5044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1F9072D-297E-41C4-9B55-A45585AE5044}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
