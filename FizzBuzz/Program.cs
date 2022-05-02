@@ -37,7 +37,7 @@ namespace FizzBuzz
                     Console.WriteLine(i);
                 }
             }
-            //Thne console can wait for a push of a button
+            //The console can wait for a push of a button
             Console.ReadKey();
 
 
