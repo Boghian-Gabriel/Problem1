@@ -18,7 +18,6 @@ namespace FizzBuzzWithList
             {
                 listOfIntegeres.Add(i);
             }
-
             return listOfIntegeres;
         }
 
@@ -36,15 +35,21 @@ namespace FizzBuzzWithList
 
         private static void FizzBuzz(List<int> list)
         {
-            string rez = "";
+            string rez;
             foreach (var item in list)
             {
-                if (item % 3 == 0 && item % 5 == 0) rez = "FizzBuzz";
+                List<int> lFizzBuzz = new List<int>();
+                if (item % 3 == 0 && item % 5 == 0)
+                {
+                    rez = "FizzBuzz";
+                    lFizzBuzz.Add(item);
+                }
                 else if (item % 3 == 0) rez = "Fizz";
                 else if (item % 5 == 0) rez = "Buzz";
                 else rez = item.ToString();
 
                 Console.WriteLine(rez);
+                Console.WriteLine("List of FizzBuzz" + lFizzBuzz.ToString());
             }
         }
 
@@ -62,4 +67,4 @@ namespace FizzBuzzWithList
             FizzBuzz(list2);
         }
     }
-}
+}N
