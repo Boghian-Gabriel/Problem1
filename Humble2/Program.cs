@@ -31,7 +31,9 @@ namespace isPalindrom
         {
             Console.Write("\nEnter a string: ");
             string s = Console.ReadLine();
-            isPalindrom(s);
+            //stochez intr o variabila de tip booleana si apoi afisez
+            bool isPalindromaa = isPalindrom(s);
+            Console.WriteLine(isPalindromaa);
             Console.ReadKey();
         }
     }

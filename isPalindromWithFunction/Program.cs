@@ -14,19 +14,19 @@ namespace isPalindromWithFunction
             //Console.WriteLine("Enter the elements of the array separated by ','\n");
 
             //inputString = Console.ReadLine();
-
+            int contor;
             string[] myArray = inputString.Split(',');
 
             Array arr = myArray;
 
-            Array.Sort(arr);
-            Console.WriteLine("Alphabetical sorted array: \n");
-            int contor = 0;
-            foreach (var s in arr)
-            {
-                contor++;
-                Console.WriteLine(contor + " - " + "{0}" + ",", s);
-            }
+            //Array.Sort(arr);
+            //Console.WriteLine("Alphabetical sorted array: \n");
+            //contor = 0;
+            //foreach (var s in arr)
+            //{
+            //    contor++;
+            //    Console.WriteLine(contor + " - " + "{0}" + ",", s);
+            //}
             Console.WriteLine("\n-------------------------------------------\n");
             Console.WriteLine("\nArray sorted by length");
             //Array sorted by length with LINQ (Language Integrated Query)
@@ -37,7 +37,8 @@ namespace isPalindromWithFunction
             foreach (var s in sortArraybyLenght)
             {
                 contor++;
-                Console.WriteLine(contor + " - " + "{0}" + ",", s);
+                //Console.WriteLine(contor + " - " + "{0}" + ",", s);
+                Console.Write(s + ",");
             }
         }
 
