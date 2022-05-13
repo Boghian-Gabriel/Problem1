@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "isPalindrom", "Humble2\isPa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testare", "Testare\Testare.csproj", "{E1C77F7F-F0ED-4E3E-9B84-DA34C5B57CDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "isPalindromWithFunction", "isPalindromWithFunction\isPalindromWithFunction.csproj", "{08C96BEF-7866-4B78-9F80-D439EFE5B124}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{E1C77F7F-F0ED-4E3E-9B84-DA34C5B57CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1C77F7F-F0ED-4E3E-9B84-DA34C5B57CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1C77F7F-F0ED-4E3E-9B84-DA34C5B57CDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08C96BEF-7866-4B78-9F80-D439EFE5B124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08C96BEF-7866-4B78-9F80-D439EFE5B124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08C96BEF-7866-4B78-9F80-D439EFE5B124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08C96BEF-7866-4B78-9F80-D439EFE5B124}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
