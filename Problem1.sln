@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "isPalindromWithFunction", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedInArray", "MedInArray\MedInArray.csproj", "{2A5317D2-70C9-4367-B97B-2D41DBF8D342}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionDesignPatterninC-Sharp", "DependencyInjectionDesignPatterninC-Sharp\DependencyInjectionDesignPatterninC-Sharp.csproj", "{C5F4B58D-3E5B-4101-BC3F-F016F7E89182}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{2A5317D2-70C9-4367-B97B-2D41DBF8D342}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A5317D2-70C9-4367-B97B-2D41DBF8D342}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A5317D2-70C9-4367-B97B-2D41DBF8D342}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5F4B58D-3E5B-4101-BC3F-F016F7E89182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5F4B58D-3E5B-4101-BC3F-F016F7E89182}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5F4B58D-3E5B-4101-BC3F-F016F7E89182}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5F4B58D-3E5B-4101-BC3F-F016F7E89182}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

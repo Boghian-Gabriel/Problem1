@@ -67,4 +67,4 @@ namespace FizzBuzzWithList
             FizzBuzz(list2);
         }
     }
-}N
+}
