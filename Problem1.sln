@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testare", "Testare\Testare.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "isPalindromWithFunction", "isPalindromWithFunction\isPalindromWithFunction.csproj", "{08C96BEF-7866-4B78-9F80-D439EFE5B124}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedInArray", "MedInArray\MedInArray.csproj", "{2A5317D2-70C9-4367-B97B-2D41DBF8D342}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{08C96BEF-7866-4B78-9F80-D439EFE5B124}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08C96BEF-7866-4B78-9F80-D439EFE5B124}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08C96BEF-7866-4B78-9F80-D439EFE5B124}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A5317D2-70C9-4367-B97B-2D41DBF8D342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A5317D2-70C9-4367-B97B-2D41DBF8D342}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A5317D2-70C9-4367-B97B-2D41DBF8D342}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A5317D2-70C9-4367-B97B-2D41DBF8D342}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
