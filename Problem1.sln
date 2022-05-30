@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionDesignPa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnagramWords", "AnagramWords\AnagramWords.csproj", "{7AC89EE5-A0FA-4DF1-B87B-E8A740F7E85B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EliminateA", "EliminateA\EliminateA.csproj", "{5A13FB67-BA50-4C14-86D3-C94CD18258F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{7AC89EE5-A0FA-4DF1-B87B-E8A740F7E85B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AC89EE5-A0FA-4DF1-B87B-E8A740F7E85B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AC89EE5-A0FA-4DF1-B87B-E8A740F7E85B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A13FB67-BA50-4C14-86D3-C94CD18258F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A13FB67-BA50-4C14-86D3-C94CD18258F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A13FB67-BA50-4C14-86D3-C94CD18258F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A13FB67-BA50-4C14-86D3-C94CD18258F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
