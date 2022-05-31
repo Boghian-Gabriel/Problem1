@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnagramWords", "AnagramWord
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EliminateA", "EliminateA\EliminateA.csproj", "{5A13FB67-BA50-4C14-86D3-C94CD18258F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonClass", "SingletonClass\SingletonClass.csproj", "{DDBCFB1E-0983-4042-B9C7-96AEEAAD2962}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{5A13FB67-BA50-4C14-86D3-C94CD18258F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A13FB67-BA50-4C14-86D3-C94CD18258F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A13FB67-BA50-4C14-86D3-C94CD18258F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDBCFB1E-0983-4042-B9C7-96AEEAAD2962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDBCFB1E-0983-4042-B9C7-96AEEAAD2962}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDBCFB1E-0983-4042-B9C7-96AEEAAD2962}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDBCFB1E-0983-4042-B9C7-96AEEAAD2962}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
