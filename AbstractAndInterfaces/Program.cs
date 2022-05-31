@@ -20,12 +20,24 @@ namespace AbstractAndInterfaces
             //opel.CallFacility();
 
             Console.WriteLine(opel.dprice());
-            Console.WriteLine(opel.getTotalSeat());
+            Console.WriteLine(opel.GetTotalSeat());
 
             Console.WriteLine(opel.Wheel());
             Console.WriteLine(opel.CheckAC());
             Console.WriteLine(opel.CallFacility());
 
+            Console.WriteLine("--------------------------");
+            //new class
+            Dacia dacia = new Dacia();
+            //from abstract class
+            Console.WriteLine(dacia.dprice());
+            Console.WriteLine(dacia.GetTotalSeat());
+            //from interface
+            var col = dacia.Color = "Red";
+            var price = dacia.Price = 10000;
+            Console.WriteLine(dacia.colors(col));
+            Console.WriteLine(dacia.getTotalSeat());
+            Console.WriteLine(dacia.price(price));
             Console.ReadKey();
 
         }

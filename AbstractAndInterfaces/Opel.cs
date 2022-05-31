@@ -11,7 +11,7 @@ namespace AbstractAndInterfaces
         private const int tSEAT= 50;
         private int Price { get; set; }
         // All abstract methods from based must be declared in child class
-        public override int getTotalSeat()
+        public override int GetTotalSeat()
         {
             return tSEAT;
         }

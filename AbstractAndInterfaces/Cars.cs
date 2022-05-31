@@ -12,7 +12,7 @@ namespace AbstractAndInterfaces
     {
         //Abstract class can contain abstract methods/ abstract member but also cand contain non-abstract
         public abstract double dprice();
-        public abstract int getTotalSeat();
+        public abstract int GetTotalSeat();
 
         // Required:
         /*
