@@ -15,7 +15,7 @@ namespace SingletonClass
             //Now. Let us modify the main method of the program
             //class to access the nested class as shown below.
 
-            //private construcor is called before we instantiated
+            //The private constructor is called before that we creat object and instantiated him
             Singleton fromTeacher = Singleton.GetInstance;
             fromTeacher.PrintDetails("From Teacher");
 
