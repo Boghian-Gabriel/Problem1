@@ -9,13 +9,14 @@ namespace isPalindromWithFunction
     internal class Program
     {
 
-        static string SortingString(string inputString)
+        public static void SortingString(string inputString)
         {
             //Console.WriteLine("Enter the elements of the array separated by ','\n");
 
             //inputString = Console.ReadLine();
-            int contor;
-            string[] myArray = inputString.Split(',');
+
+            //int contor;
+            //string[] myArray = inputString.Split(',');
 
             //Array arr = myArray;
 
@@ -30,9 +31,9 @@ namespace isPalindromWithFunction
             //Console.WriteLine("\n-------------------------------------------\n");
             //Console.WriteLine("\nArray sorted by length");
             //Array sorted by length with LINQ (Language Integrated Query)
-            var sortArraybyLenght = from x in myArray
-                                    orderby x.Length
-                                    select x;
+            //var sortArraybyLenght = from x in myArray
+            //                        orderby x.Length
+            //                        select x;
             //contor = 0;
             //foreach (var s in sortArraybyLenght)
             //{
@@ -41,7 +42,18 @@ namespace isPalindromWithFunction
             //    Console.Write(s + ",");
             //}
 
-            return myArray.ToString();
+            //return myArray.ToString();
+            String[] arr = inputString.Split(',');
+            List<string> list = new List<string>();
+            var x = from a in arr
+                    orderby a.Length ascending
+                    select a;
+            foreach(var a in x)
+            {
+                list.Add(a.ToString());
+            }
+            Console.Write(list + " ");
+
         }
 
         static void Main(string[] args)
@@ -49,8 +61,9 @@ namespace isPalindromWithFunction
             Console.WriteLine("Enter the elements of the array separated by ','\n");
 
             string elem = Console.ReadLine();
-            var ass = SortingString(elem);
-            Console.WriteLine(ass + ",");
+            // var ass = SortingString(elem);
+            SortingString(elem);
+           // Console.WriteLine(ass + ",");
             Console.ReadKey();
         }
     }
