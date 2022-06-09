@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "UnitTesting\C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorTesting", "CalculatorTesting\CalculatorTesting.csproj", "{6757A33E-5866-4095-B42E-977AD5AD3EFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Merge2ArrayString", "Merge2ArrayString\Merge2ArrayString.csproj", "{D1CDC8C1-D98A-4D51-AAB9-0B728C40CCBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{6757A33E-5866-4095-B42E-977AD5AD3EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6757A33E-5866-4095-B42E-977AD5AD3EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6757A33E-5866-4095-B42E-977AD5AD3EFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1CDC8C1-D98A-4D51-AAB9-0B728C40CCBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1CDC8C1-D98A-4D51-AAB9-0B728C40CCBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1CDC8C1-D98A-4D51-AAB9-0B728C40CCBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1CDC8C1-D98A-4D51-AAB9-0B728C40CCBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -49,7 +49,16 @@ namespace FizzBuzzWithList
                 else rez = item.ToString();
 
                 Console.WriteLine(rez);
-                Console.WriteLine("List of FizzBuzz" + lFizzBuzz.ToString());
+
+                if (item % 3 == 0 && item % 5 == 0)
+                {
+                    Console.Write("This list will display only FizzBuzz numbers: ");
+                    foreach (var f in lFizzBuzz)
+                    {
+                        Console.Write(" " + f);
+                    }
+                    Console.WriteLine();
+                }
             }
         }
 
@@ -65,6 +74,7 @@ namespace FizzBuzzWithList
             //declare another list with n number of numbers
             List<int> list2 = GetInteger2(num);
             FizzBuzz(list2);
+            Console.ReadLine();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace isPalindrom
         {
             string reverse = string.Empty;
 
-            for (int i = inputString.Length - 1; i>=0; i--) 
+            for (int i = inputString.Length-1; i>=0; i--) 
             {
                 reverse += inputString[i];    
             }
