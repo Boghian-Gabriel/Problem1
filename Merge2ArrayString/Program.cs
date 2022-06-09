@@ -52,6 +52,7 @@ namespace Merge2ArrayString
             {
                 Console.Write(res + " ");
             }
+            
             Console.WriteLine();
             List<string> listS1 = new List<string>();
             List<string> listS2 = new List<string>();
@@ -65,15 +66,13 @@ namespace Merge2ArrayString
             }
 
             var newList = listS1.Union(listS2);
-            Console.WriteLine("\nThe elements from the frist array and the second array are display each only once.");
+            Console.WriteLine("\nThe elements from the first array and the second array are display each only once.");
             foreach (var itm in newList)
             {
                 Console.Write(itm.ToString() + " ");
             }
             //Display into single array, byr every element appear one time.
-
             Console.ReadLine();
-
         }
     }
 }
