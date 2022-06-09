@@ -8,15 +8,14 @@ namespace DemoSingletonClass
 {
     public class MySingleton
     {
-         //static field for our singleton instance
-         private static MySingleton instance = null;
-        private MySingleton()
-        {
-        }
+        //static field for our singleton instance
+        private static MySingleton instance = null;
+        private MySingleton(){}
 
         public static MySingleton Instance
         {
             //aceasta parte este instantiata doar atunci cand este creat
+            //intr-o metoda statica, trebuie sa utilizam proprietati declarate statici
             get { 
                 if(instance == null)
                 {
@@ -28,7 +27,7 @@ namespace DemoSingletonClass
 
         public void DoSomething()
         {
-            Console.WriteLine("Singleton class code has been colled");
+            Console.WriteLine("Singleton class code has been called");
             Console.ReadLine();
         }
     }
