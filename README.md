@@ -1,1 +1,1 @@
-* In this project I put the other small projects which then contain three algorithm problems. *
+* In this project I decided to put another small projects because  it is easly for me to find a solution that help me in future. *
