@@ -38,12 +38,16 @@ namespace RemoveEvenElement
             //    Console.Write(evenElem + " ");
             //}
             //number of even element in the first array
-            int cntEven = 0;
+            int cntEven = 0, cntOdd = 0;
             for(int i = 0; i < arr1.Length; i++)
             {
                 if(arr1[i] % 2 == 0)
                 {
                     cntEven++;
+                }
+                else
+                {
+                    cntOdd++;
                 }
             }
             Console.Write("Number of even element is: " + cntEven + "\n");
@@ -51,11 +55,16 @@ namespace RemoveEvenElement
             Console.WriteLine();
             //initial toate elementele din vector sunt 0
             int  []evenArray = new int[n];
-            for(int i = 0; i < arr1.Length; i++)
+            int[] oddArray = new int[n];
+            for (int i = 0; i < arr1.Length; i++)
             {
                 if(arr1[i] % 2 == 0)
                 {
                     evenArray[i] = arr1[i];
+                }
+                else
+                {
+                    oddArray[i] = arr1[i];
                 }
             }
             //e ok si asa , insa parcurgerea tot se face
@@ -65,6 +74,15 @@ namespace RemoveEvenElement
                 if (evenArray[i] != 0)
                 {
                     Console.Write(evenArray[i] + " ");
+                }
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < oddArray.Length; i++)
+            {
+                if (oddArray[i] != 0)
+                {
+                    Console.Write(oddArray[i] + " ");
                 }
             }
 
