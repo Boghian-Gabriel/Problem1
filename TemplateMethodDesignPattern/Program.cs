@@ -28,6 +28,8 @@ namespace TemplateMethodDesignPattern
             RunTest();
             DeployCode();
         }
+
+        
         public virtual void CompileCode()
         {
             Console.WriteLine("Code is Compiled!");
