@@ -59,6 +59,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMethodDesignPattern
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonMVC", "SingletonMVC\SingletonMVC.csproj", "{95C95A71-355F-4B30-AC69-DEFB40E089D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMMDC", "CMMDC\CMMDC.csproj", "{47173C69-FDA9-48B2-B570-85E7E045FEF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -177,6 +179,10 @@ Global
 		{95C95A71-355F-4B30-AC69-DEFB40E089D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95C95A71-355F-4B30-AC69-DEFB40E089D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95C95A71-355F-4B30-AC69-DEFB40E089D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47173C69-FDA9-48B2-B570-85E7E045FEF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47173C69-FDA9-48B2-B570-85E7E045FEF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47173C69-FDA9-48B2-B570-85E7E045FEF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47173C69-FDA9-48B2-B570-85E7E045FEF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
