@@ -35,7 +35,6 @@ namespace RightToLeft
             {
                 Console.Write(arr2[i]+ " ");
             }
-
             Console.ReadKey();
         }
     }

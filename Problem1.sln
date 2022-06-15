@@ -65,6 +65,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinarySearch", "BinarySearc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveEvenElement", "RemoveEvenElement\RemoveEvenElement.csproj", "{6093A277-46BE-4066-9CC5-7561F78DBBEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseArrayWithFunction", "ReverseArrayWithFunction\ReverseArrayWithFunction.csproj", "{212C68D0-3A17-4765-868F-8F0C9D31DA27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -195,6 +197,10 @@ Global
 		{6093A277-46BE-4066-9CC5-7561F78DBBEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6093A277-46BE-4066-9CC5-7561F78DBBEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6093A277-46BE-4066-9CC5-7561F78DBBEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{212C68D0-3A17-4765-868F-8F0C9D31DA27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{212C68D0-3A17-4765-868F-8F0C9D31DA27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{212C68D0-3A17-4765-868F-8F0C9D31DA27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{212C68D0-3A17-4765-868F-8F0C9D31DA27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

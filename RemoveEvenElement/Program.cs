@@ -85,8 +85,6 @@ namespace RemoveEvenElement
                     Console.Write(oddArray[i] + " ");
                 }
             }
-
-
             Console.ReadKey();
         }
     }
