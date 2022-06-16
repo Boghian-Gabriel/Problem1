@@ -40,5 +40,17 @@ namespace FizzBuzz
             //The console can wait for a push of a button
             Console.ReadKey();
         }
+
+        /*Daca o clasa are un constructor privat aceasta nu poate fi mostenita*/
+        public class A
+        {
+            public A() { }
+
+            //private A() { }
+        }
+        public class B : A
+        {
+
+        }
     }
 }
