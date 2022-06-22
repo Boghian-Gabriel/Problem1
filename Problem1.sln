@@ -73,6 +73,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisplayMatrix", "DisplayMat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinAndMaxSumFromArray", "MinAndMaxSumFromArray\MinAndMaxSumFromArray.csproj", "{772C21D8-FEC8-4ACA-B2AB-676E2FB24954}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepedencyInjection", "DepedencyInjection\DepedencyInjection.csproj", "{A0FF3995-6264-451D-9A8B-326936667DB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -219,6 +221,10 @@ Global
 		{772C21D8-FEC8-4ACA-B2AB-676E2FB24954}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{772C21D8-FEC8-4ACA-B2AB-676E2FB24954}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{772C21D8-FEC8-4ACA-B2AB-676E2FB24954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0FF3995-6264-451D-9A8B-326936667DB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0FF3995-6264-451D-9A8B-326936667DB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0FF3995-6264-451D-9A8B-326936667DB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0FF3995-6264-451D-9A8B-326936667DB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
