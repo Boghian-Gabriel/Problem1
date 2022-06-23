@@ -9,6 +9,8 @@ namespace SOLID_principles
 {
     internal class Program
     {
+        #region "About SOLID"
+
         /*
          S - Single Responsability Principle;
          O - Open-Closed Principle;
@@ -21,6 +23,7 @@ namespace SOLID_principles
 
         - cleaner and more organized code.
          */
+        #endregion
 
         #region "SRP - Single Responsability Principle"
 
@@ -49,11 +52,86 @@ namespace SOLID_principles
             }
         }
         #endregion
+
+        #region "OCP - Open / Closed Priciple "
+        /*
+         Using Open Closed Principle = have a base class, and each operation would be a new class
+        */
+        public abstract class BaseCalculation
+        {
+            public abstract double Calculate(double n1, double n2);
+        }
+
+        //Addition
+        public class AdditionCalculation : BaseCalculation
+        {
+            public override double Calculate(double n1, double n2)
+            {
+                return n1 + n2;
+            }
+        }
+        //Multiplication
+        public class MultiplicationCalculation : BaseCalculation
+        {
+            public override double Calculate(double n1, double n2)
+            {
+                return n1 * n2;
+            }
+        }
+        //Substraction
+        public class SubstractionCalculation : BaseCalculation
+        {
+            public override double Calculate(double n1, double n2)
+            {
+                return n1 - n2;
+            }
+        }
+        //Division
+        public class DivisionCalculation : BaseCalculation
+        {
+            public override double Calculate(double n1, double n2)
+            {
+                return n1 / n2;
+            }
+        }      
+        #endregion
         static void Main(string[] args)
         {
+            //SRP
             Solution s = new Solution();
             int rez = s.Sum(4, 5);
-            Console.Write("Sum = " + rez);
+            Console.WriteLine("Sum = " + rez);
+
+        
+            //OCP
+            AdditionCalculation additionCalculation = new AdditionCalculation();
+            double nr1 = 6, nr2 = 8;
+            double val = additionCalculation.Calculate(nr1, nr2);
+            Console.WriteLine($"Addition is : {nr1} + {nr2} = {val}");
+
+
+            BaseCalculation baseCalculation = new MultiplicationCalculation();
+            double val2 = baseCalculation.Calculate(2, 3);
+            Console.WriteLine("Multiplication is : " + val2);
+
+            BaseCalculation bs2;
+
+            bs2 = new SubstractionCalculation();
+            Console.WriteLine("Substraction is : " + bs2.Calculate(5, 10));
+
+            bs2 = new DivisionCalculation();
+            try
+            {
+                Console.WriteLine("Division is : " + bs2.Calculate(4, 0));
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine(" -> " + ex.Message);
+            }
+            finally
+            {
+                Console.Write("Executed try catch block");
+            }
             Console.ReadKey();
         }
     }
