@@ -22,6 +22,7 @@ namespace SOLID_principles
         - cleaner and more organized code.
          */
 
+        #region "SRP - Single Responsability Principle"
 
         // 1. SRP - Using Single Responsability Principle we have two different classes, like below example
         public static class Logging
@@ -47,6 +48,7 @@ namespace SOLID_principles
                 return rezult;
             }
         }
+        #endregion
         static void Main(string[] args)
         {
             Solution s = new Solution();
