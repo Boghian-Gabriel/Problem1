@@ -81,6 +81,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CifrePrime", "CifrePrime\Ci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DivizoriNR", "DivizoriNR\DivizoriNR.csproj", "{51CBDC3C-6DB6-4C94-93EE-D7FEAD230A88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoaneAndVocale", "ConsoaneAndVocale\ConsoaneAndVocale.csproj", "{1A5F4475-7B64-451A-8775-610FEA74A8F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -243,6 +245,10 @@ Global
 		{51CBDC3C-6DB6-4C94-93EE-D7FEAD230A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51CBDC3C-6DB6-4C94-93EE-D7FEAD230A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51CBDC3C-6DB6-4C94-93EE-D7FEAD230A88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A5F4475-7B64-451A-8775-610FEA74A8F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A5F4475-7B64-451A-8775-610FEA74A8F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A5F4475-7B64-451A-8775-610FEA74A8F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A5F4475-7B64-451A-8775-610FEA74A8F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
