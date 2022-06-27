@@ -28,6 +28,8 @@ namespace SOLID_principles
         #region "SRP - Single Responsability Principle"
 
         // 1. SRP - Using Single Responsability Principle we have two different classes, like below example
+        // SRP- A class should take one responsability and there
+        // should be one reason to change that class.
         public static class Logging
         {
             public static void Log(string msg)
@@ -56,7 +58,9 @@ namespace SOLID_principles
         #region "OCP - Open / Closed Priciple "
         /*
          Using Open Closed Principle = have a base class, and each operation would be a new class
-        */
+        
+         A class should be open for extention but closed for any modification
+         */
         public abstract class BaseCalculation
         {
             public abstract double Calculate(double n1, double n2);
@@ -91,12 +95,45 @@ namespace SOLID_principles
         {
             public override double Calculate(double n1, double n2)
             {
+
                 return n1 / n2;
             }
-        }      
+        }
         #endregion
+
+        #region "LSP - Liskov Substitution Principle"
+
+        #endregion
+
+        #region "ISP - Interface Segregation Principle"
+        public class AdditionCalculationISP
+        {
+            public int NumberA { get; set; }
+            public int NumberB { get; set; }
+
+            public AdditionCalculationISP(int numberA, int numberB)
+            {
+                this.NumberA = numberA;
+                this.NumberB = numberB;
+            }
+
+            public virtual int Calculate(){
+                return this.NumberA + NumberB;
+            }
+        }
+        #endregion
+
+        #region "DIP - Dependency Inversion Principle"
+        //Constructor Injection
+
+        //Property Injection
+
+        // Method Injection
+        #endregion
+
         static void Main(string[] args)
         {
+         
             //SRP
             Solution s = new Solution();
             int rez = s.Sum(4, 5);
@@ -126,12 +163,22 @@ namespace SOLID_principles
             }
             catch (DivideByZeroException ex)
             {
-                Console.WriteLine(" -> " + ex.Message);
+                Console.WriteLine(" Cannot divide by zero! " + ex.Message);
             }
             finally
             {
                 Console.Write("Executed try catch block");
             }
+
+            //LSP
+
+            //ISP
+
+            //DIP:
+            //a. Constructor Injection
+            //b. Property Injection
+            //c. Method Injection
+ 
             Console.ReadKey();
         }
     }
