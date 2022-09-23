@@ -18,19 +18,19 @@ namespace RandomNumberEvenAndOdd
 
             Random random = new Random();
             int number = random.Next(intMin, intMax);
-            bool isEven = false;
+            bool isEvenNumber = false;
             Console.WriteLine(number);
 
             if(number % 2 == 0)
             {
-                isEven = true;
+                isEvenNumber = true;
             }
             else
             {
-                isEven = false;
+                isEvenNumber = false;
             }
 
-            if (isEven)
+            if (isEvenNumber)
             {
                 Console.WriteLine($"The number {number} is even!");
             }
