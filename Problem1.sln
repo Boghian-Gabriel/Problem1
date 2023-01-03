@@ -85,7 +85,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoaneAndVocale", "Consoa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomNumberEvenAndOdd", "RandomNumberEvenAndOdd\RandomNumberEvenAndOdd.csproj", "{B2DAC268-9C60-4B5C-B1E7-A206E0CB4C8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateNumberRandom", "GenerateNumberRandom\GenerateNumberRandom.csproj", "{44D66A0D-BFF8-4061-94BA-FD74400E485F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenerateNumberRandom", "GenerateNumberRandom\GenerateNumberRandom.csproj", "{44D66A0D-BFF8-4061-94BA-FD74400E485F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinarySearchIterativ", "BinarySearchIterativ\BinarySearchIterativ.csproj", "{29DDD809-DD95-476A-9DBE-4F812B713514}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -261,6 +263,10 @@ Global
 		{44D66A0D-BFF8-4061-94BA-FD74400E485F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44D66A0D-BFF8-4061-94BA-FD74400E485F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44D66A0D-BFF8-4061-94BA-FD74400E485F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29DDD809-DD95-476A-9DBE-4F812B713514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29DDD809-DD95-476A-9DBE-4F812B713514}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29DDD809-DD95-476A-9DBE-4F812B713514}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29DDD809-DD95-476A-9DBE-4F812B713514}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

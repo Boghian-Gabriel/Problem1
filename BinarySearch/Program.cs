@@ -69,6 +69,7 @@ namespace BinarySearch
                 Console.WriteLine("Element found at index "
                                   + result);
 
+            Console.ReadKey();
         }
     }
 }
