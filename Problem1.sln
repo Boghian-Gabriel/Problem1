@@ -87,9 +87,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomNumberEvenAndOdd", "R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenerateNumberRandom", "GenerateNumberRandom\GenerateNumberRandom.csproj", "{44D66A0D-BFF8-4061-94BA-FD74400E485F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinarySearchIterativ", "BinarySearchIterativ\BinarySearchIterativ.csproj", "{29DDD809-DD95-476A-9DBE-4F812B713514}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinarySearchIterativ", "BinarySearchIterativ\BinarySearchIterativ.csproj", "{29DDD809-DD95-476A-9DBE-4F812B713514}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinMaxArray", "MinMaxArray\MinMaxArray.csproj", "{D1BAE38E-231F-48C2-8910-76E00C3FA27B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinMaxArray", "MinMaxArray\MinMaxArray.csproj", "{D1BAE38E-231F-48C2-8910-76E00C3FA27B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumber", "PrimeNumber\PrimeNumber.csproj", "{FA02C210-6569-4FE7-A129-F7F9C3FCFCD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -273,6 +275,10 @@ Global
 		{D1BAE38E-231F-48C2-8910-76E00C3FA27B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1BAE38E-231F-48C2-8910-76E00C3FA27B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1BAE38E-231F-48C2-8910-76E00C3FA27B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA02C210-6569-4FE7-A129-F7F9C3FCFCD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA02C210-6569-4FE7-A129-F7F9C3FCFCD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA02C210-6569-4FE7-A129-F7F9C3FCFCD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA02C210-6569-4FE7-A129-F7F9C3FCFCD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
