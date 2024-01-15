@@ -91,11 +91,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinarySearchIterativ", "Bin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinMaxArray", "MinMaxArray\MinMaxArray.csproj", "{D1BAE38E-231F-48C2-8910-76E00C3FA27B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumber", "PrimeNumber\PrimeNumber.csproj", "{FA02C210-6569-4FE7-A129-F7F9C3FCFCD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimeNumber", "PrimeNumber\PrimeNumber.csproj", "{FA02C210-6569-4FE7-A129-F7F9C3FCFCD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibonacci", "Fibonacci\Fibonacci.csproj", "{415F2A48-2B9A-41E4-936C-2C1DECE8E1D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fibonacci", "Fibonacci\Fibonacci.csproj", "{415F2A48-2B9A-41E4-936C-2C1DECE8E1D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sum2Polynom", "Sum2Polynom\Sum2Polynom.csproj", "{36F7DCA1-6730-49C4-9FFC-13A00E8FF3FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sum2Polynom", "Sum2Polynom\Sum2Polynom.csproj", "{36F7DCA1-6730-49C4-9FFC-13A00E8FF3FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterclassingMethod", "InterclassingMethod\InterclassingMethod.csproj", "{025DE3D7-D175-4DBC-9383-E37D2041B85B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -291,6 +293,10 @@ Global
 		{36F7DCA1-6730-49C4-9FFC-13A00E8FF3FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36F7DCA1-6730-49C4-9FFC-13A00E8FF3FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36F7DCA1-6730-49C4-9FFC-13A00E8FF3FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{025DE3D7-D175-4DBC-9383-E37D2041B85B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{025DE3D7-D175-4DBC-9383-E37D2041B85B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{025DE3D7-D175-4DBC-9383-E37D2041B85B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{025DE3D7-D175-4DBC-9383-E37D2041B85B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
