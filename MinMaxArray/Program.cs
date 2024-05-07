@@ -8,7 +8,7 @@ namespace BinarySearch
 {
     internal class Program
     {
-        static  List<int> GetMinMax(int[] arr1, int n)
+        static List<int> GetMinMax(int[] arr1, int n)
         {
             List<int> result = new List<int>();
             int min = 0;

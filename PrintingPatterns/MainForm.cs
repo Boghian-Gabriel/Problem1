@@ -44,7 +44,6 @@ namespace PrintingPatterns
             localDate = DateTime.Now;
             DateTimeBtn.Text = localDate.ToString("  dd.MM.yyyy");
             SetToolTip();
-
         }
         #endregion
 
@@ -208,8 +207,7 @@ namespace PrintingPatterns
         /// <summary>
         /// <summary>
         /// if we select the # simbol and number equals to 5
-        /// the result is:
-        /// 
+        /// the result is:        
         ///     @
         ///    @@
         ///   @@@
@@ -233,10 +231,9 @@ namespace PrintingPatterns
 
                 for (int i = 0; i < nr; i++)
                 {
-                    // Parcurge fiecare coloană
                     for (int j = 0; j < nr - i - 1; j++)
                     {
-                        stringBuilder.Append(" "); // Afisează spații pentru a alinia dreapta
+                        stringBuilder.Append(" ");
                     }
 
                     for (int j = 0; j < i+1; j++)
@@ -253,7 +250,12 @@ namespace PrintingPatterns
 
         #region "Button 5"
         /// <summary>
-        /// TO DO...
+        ///  ***
+        ///  **
+        ///  *
+        ///  *
+        ///  **
+        ///  s***
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -266,6 +268,7 @@ namespace PrintingPatterns
         #region "Open User control DateTime"
         private void DateTime_Click(object sender, EventArgs e)
         {
+            //to to... bug fix: display ucDateTime
             if (flag == 1)
             {
                 panelUcDateTime.Visible = true;
@@ -275,7 +278,8 @@ namespace PrintingPatterns
                     Visible = true,                    
                 };
                 panelUcDateTime.Controls.Add(ucDateTime);
-                //ucDateTime.BringToFront();
+                //panelUcDateTime.BringToFront();
+                ucDateTime.BringToFront();
                 flag = 0;
                 return;
             }
@@ -319,6 +323,8 @@ namespace PrintingPatterns
         
         private void BtnResetInfo_Click(object sender, EventArgs e)
         {
+            //SecondForm secondForm = new SecondForm();
+            //secondForm.ShowDialog();
             ResetInfo();
         }
         #endregion

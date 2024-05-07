@@ -10,8 +10,7 @@ namespace PrintingPatterns
         {
             InitializeComponent();
             labelDate.Text = DateTime.Now.ToString("dd.MM.yyyy");
-            IsOpen = true;
-            Dock = DockStyle.Fill;
+            IsOpen = true;            
         }
 
         private void ucButtons1_Load(object sender, EventArgs e)
