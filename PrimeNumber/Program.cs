@@ -19,7 +19,7 @@
 
             return false;
         }
-        static bool isPrimeNumber(int number)
+        static bool IsPrimeNumber(int number)
         {
             int ctr = 0;
             for (int i = 1; i <= number; i++)
@@ -56,7 +56,7 @@
             List<int> lstWithPrimeNumber = new List<int>();
             for (int i = a; i <= b; i++)
             {
-                bool isPrime = isPrimeNumber(i);
+                bool isPrime = IsPrimeNumber(i);
                 //if number is prime add to list
 
                 if (isPrime || i == 1)

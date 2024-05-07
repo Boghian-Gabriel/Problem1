@@ -16,7 +16,7 @@ namespace SingletonMVC.Controllers
     {
 
         private readonly ILogger ilog;
-        private EmployeeDB1 db = new EmployeeDB1();
+        private readonly EmployeeDB1 db = new EmployeeDB1();
 
         public EmployeeSingletonsController()
         {

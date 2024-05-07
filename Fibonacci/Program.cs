@@ -3,17 +3,17 @@
     internal class Program
     {
         //verificam daca numarul este patrat perfect atunci true, else false
-        static bool isPerfectSquare(int x)
+        static bool IsPerfectSquare(int x)
         {
             int s = (int)Math.Sqrt(x);
             return (s * s == x);
         }
 
         //una din metode ce verifica pe baza functiei de mai sus daca nr este Fibonacci
-        static bool itemIsFibonacci(int number)
+        static bool ItemIsFibonacci(int number)
         {
-            return isPerfectSquare(5 * number * number + 4) ||
-                    isPerfectSquare(5 * number * number - 4);
+            return IsPerfectSquare(5 * number * number + 4) ||
+                   IsPerfectSquare(5 * number * number - 4);
         }
 
         static void Main(string[] args)
@@ -40,7 +40,7 @@
             for (int i = 0; i < nr; i++)
             {
                 int item = v[i];
-                if (itemIsFibonacci(v[i]))
+                if (ItemIsFibonacci(v[i]))
                 {
                     iContor++;
                     lstWithFibonnaciItem.Add(item);

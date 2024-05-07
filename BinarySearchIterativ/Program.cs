@@ -10,7 +10,7 @@ namespace BinarySearch
     {
         // Returns index of x if it is present in
         // arr[l..r], else return -1
-        static int binarySearch(int[] arr, int left, int right, int x)
+        static int BinarySearch(int[] arr, int left, int right, int x)
         {
             while (left < right)
             {
@@ -43,7 +43,7 @@ namespace BinarySearch
 
 
             //-----------------
-            int result = binarySearch(arr1, 0, n - 1, x);
+            int result = BinarySearch(arr1, 0, n - 1, x);
 
             if (result == -1)
                 Console.WriteLine("The inserted element is not found in the array");

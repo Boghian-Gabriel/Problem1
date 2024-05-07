@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+﻿using PrintingPatterns.Classes;
+using System;
+using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PrintingPatterns
@@ -14,13 +10,25 @@ namespace PrintingPatterns
     {
         #region "Properties"
         DateTime localDate;
+        readonly StringBuilder stringBuilder = new StringBuilder();
+
+        /// <summary>
+        /// Properties for moving the window with the mouse
+        /// </summary>
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
         #endregion
 
         #region "Constructor"
         public Form1()
         {
             InitializeComponent();
-
+            
             LoadForm();
         }
         #endregion
@@ -29,10 +37,12 @@ namespace PrintingPatterns
         private void LoadForm()
         {
             panelUcDateTime.Visible = false;
-            comboBox1.Items.Add("Select");
-            comboBox1.SelectedItem = "Select";
+            comboBox1.Items.Add(Constants.SelectComboBox);
+            comboBox1.SelectedItem = Constants.SelectComboBox;
             localDate = DateTime.Now;
             DateTimeBtn.Text = localDate.ToString("dd.MM.yyyy");
+            SetToolTip();
+
         }
         #endregion
 
@@ -43,31 +53,44 @@ namespace PrintingPatterns
         }
         #endregion
 
-        #region "DateTime uc"
+        #region "User control DateTime"
         private void DateTime_Click(object sender, EventArgs e)
         {
             //to do...
-            //ucDateTime ucDateTime = new ucDateTime(localDate);
-            //panelUcDateTime.Controls.Add(ucDateTime);
-            //panelUcDateTime.Visible = true;
+            ucDateTime ucDateTime = new ucDateTime
+            {
+                Dock = DockStyle.Fill
+            };
+
+            panelUcDateTime.Controls.Add(ucDateTime);
+            panelUcDateTime.Visible = true;
+            ucDateTime.BringToFront();
         }
         #endregion       
 
-        #region "Verify componenets"
+        #region "Verify components"
         private bool IsEmpty(ComboBox combo, NumericUpDown numericUpDown1)
         {
-            
-            if ((string)combo.SelectedItem == "Select")
+            MessageBoxCls messageBoxCls = new MessageBoxCls
             {
-                MessageBox.Show($"Field {lbla1.Text} are required.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Message = $"Field {lbla1.Text} are required.",
+                Caption = Constants.CaptionInformation,
+                Button = MessageBoxButtons.OK,
+                Icon = MessageBoxIcon.Warning
+            };
+            HelperMessageBox helperMessageBox = new HelperMessageBox(messageBoxCls);
+            if ((string)combo.SelectedItem == Constants.SelectComboBox)
+            {
+                helperMessageBox.ShowMessageBox();
                 combo.Focus();
                 combo.DroppedDown = true;
                 return false;
             }
 
-            if (String.IsNullOrEmpty(numericUpDown1.Text))
+            messageBoxCls.Message = $"Field {lbla2.Text} are required and must not be equal to zero...";
+            if (String.IsNullOrEmpty(numericUpDown1.Text) || int.Parse(numericUpDown1.Text) == 0)
             {
-                MessageBox.Show($"Field {lbla2.Text} are required.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                helperMessageBox.ShowMessageBox();
                 numericUpDown1.Focus();
                 return false;
             }
@@ -79,29 +102,41 @@ namespace PrintingPatterns
         #region "Events for combobox"
         private void comboBox1_DropDown(object sender, EventArgs e)
         {
-            comboBox1.Items.Remove("Select");
+            comboBox1.Items.Remove(Constants.SelectComboBox);
         }
 
         private void comboBox1_DropDownClosed(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem == null)
+            if (comboBox1.SelectedIndex == -1)
             {
-                comboBox1.Items.Add("Select");
-                comboBox1.SelectedItem = "Select";
+                comboBox1.Items.Insert(0, Constants.SelectComboBox);
+                comboBox1.SelectedIndex = 0;
             }
         }
         #endregion
 
         #region "Buttons"
-        #region "Buttons 1"
+
+        #region "Button 1"
+        /// <summary>
+        /// if we select the * simbol and number equals to 5
+        /// the result is:
+        /// 1. *
+        /// 2. *
+        /// 3. *
+        /// 4. *
+        /// 5. *
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Printing1_Click(object sender, EventArgs e)
         {
+            ClearStringBuilder();
             if (IsEmpty(comboBox1, numericUpDown1))
             {
-                int nr = int.Parse(numericUpDown1.Text);
-                StringBuilder stringBuilder = new StringBuilder();
-                stringBuilder.AppendLine(comboBox1.Text);
-                stringBuilder.AppendLine(numericUpDown1.Text);
+                int nr = int.Parse(numericUpDown1.Text);                
+                stringBuilder.AppendLine($"Symbol: {comboBox1.Text}" + " - " + $"Number: {numericUpDown1.Text}");
+                stringBuilder.AppendLine("Result: ");
                 for (int i = 0; i < nr; i++)
                 {
                     stringBuilder.AppendLine($"{i + 1}. {comboBox1.Text}");
@@ -110,30 +145,150 @@ namespace PrintingPatterns
             }
         }
         #endregion
+
+        #region "Button 2"
+        /// <summary>
+        /// if we select the $ simbol and number equals to 5
+        /// the result is:
+        /// $$$$$ 
+        /// $$$$
+        /// $$$
+        /// $$
+        /// $
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Printing2_Click(object sender, EventArgs e)
         {
-            // to do...
+            ClearStringBuilder();
+            if (IsEmpty(comboBox1, numericUpDown1))
+            {
+                string simbol = comboBox1.Text;
+                int nr = int.Parse(numericUpDown1.Text);
+
+                stringBuilder.AppendLine($"Symbol: {comboBox1.Text}" + " - " + $"Number: {numericUpDown1.Text}");
+                stringBuilder.AppendLine("Result: ");
+
+                for (int i = 0; i < nr; i++)
+                {
+                    for (int j = i; j < nr; j++)
+                    {
+                        stringBuilder.Append($"{comboBox1.Text}");
+                    }
+                    stringBuilder.AppendLine("");
+                }
+                result.Text = stringBuilder.ToString();
+            }
         }
+        #endregion
+
+        #region "Button 3"
+        /// <summary>
+        /// if we select the # simbol and number equals to 5
+        /// the result is:
+        /// #
+        /// ##
+        /// ###
+        /// ####
+        /// #####
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Printing3_Click(object sender, EventArgs e)
-        {
-            // to do...
+        {            
+            ToDo();
         }
+        #endregion
+
+        #region "Button 4"
+        /// <summary>
+        /// TO DO...
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Printing4_Click(object sender, EventArgs e)
         {
-            // to do...
+            ToDo();           
         }
+        #endregion
+
+        #region "Button 5"
+        /// <summary>
+        /// TO DO...
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Printing5_Click(object sender, EventArgs e)
         {
-            // to do...
+            ToDo();
+        }
+        #endregion
+
+        #endregion
+
+        #region "To do"
+        public void ToDo()
+        {
+            MessageBoxCls messageBoxCls = new MessageBoxCls
+            {
+                Message = Constants.MessageBoxToDo,
+                Caption = Constants.CaptionInformation,
+                Button = MessageBoxButtons.OK,
+                Icon = MessageBoxIcon.Information
+            };
+
+            HelperMessageBox helperMessageBox = new HelperMessageBox(messageBoxCls);
+            helperMessageBox.ShowMessageBox();
         }
         #endregion
 
         #region "Reset"
         private void ResetInfo()
         {
-            comboBox1.Items.Clear();
-            numericUpDown1.ResetText();
+            comboBox1.Items.Insert(0, Constants.SelectComboBox);
+            comboBox1.SelectedIndex = 0;
+
+            numericUpDown1.Value = 0;
             result.ResetText();
+        }
+        
+        private void BtnResetInfo_Click(object sender, EventArgs e)
+        {
+            ResetInfo();
+        }
+        #endregion
+
+        #region "Move window"
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+        #endregion
+
+        #region "ToolTip"
+        private void SetToolTip()
+        {
+            HelperToolTip helperToolTip = new HelperToolTip();
+
+            helperToolTip.SetToolTip(Printing1, "1. *\n2. *\n3. *");
+            helperToolTip.SetToolTip(Printing2, "***\n**\n*");
+            helperToolTip.SetToolTip(Printing3, "*\n**\n***");
+            helperToolTip.SetToolTip(Printing4, "To do...");
+            helperToolTip.SetToolTip(Printing5, "To do...");
+        }
+        #endregion
+
+        #region "Dispose"
+        public void ClearStringBuilder()
+        {
+            if(!String.IsNullOrEmpty(stringBuilder.ToString()))
+            {
+                stringBuilder.Clear();
+            }            
         }
         #endregion
     }
