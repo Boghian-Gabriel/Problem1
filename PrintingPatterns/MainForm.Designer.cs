@@ -1,6 +1,6 @@
 ﻿namespace PrintingPatterns
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.BackBasePanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnResetInfo = new System.Windows.Forms.Button();
-            this.panelUcDateTime = new System.Windows.Forms.Panel();
-            this.ucDateTime1 = new PrintingPatterns.ucDateTime();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.lbla2 = new System.Windows.Forms.Label();
@@ -41,6 +39,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.result = new System.Windows.Forms.RichTextBox();
             this.PanelLeft = new System.Windows.Forms.Panel();
+            this.panelUcDateTime = new System.Windows.Forms.Panel();
             this.DateTimeBtn = new System.Windows.Forms.Button();
             this.Printing5 = new System.Windows.Forms.Button();
             this.Printing4 = new System.Windows.Forms.Button();
@@ -57,7 +56,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BackBasePanel.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panelUcDateTime.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.PanelLeft.SuspendLayout();
@@ -82,7 +80,6 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.Controls.Add(this.btnResetInfo);
-            this.panel3.Controls.Add(this.panelUcDateTime);
             this.panel3.Controls.Add(this.tableLayoutPanel1);
             this.panel3.Controls.Add(this.result);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -100,23 +97,6 @@
             this.btnResetInfo.Text = "Reset";
             this.btnResetInfo.UseVisualStyleBackColor = true;
             this.btnResetInfo.Click += new System.EventHandler(this.BtnResetInfo_Click);
-            // 
-            // panelUcDateTime
-            // 
-            this.panelUcDateTime.Controls.Add(this.ucDateTime1);
-            this.panelUcDateTime.Location = new System.Drawing.Point(58, 154);
-            this.panelUcDateTime.Name = "panelUcDateTime";
-            this.panelUcDateTime.Size = new System.Drawing.Size(389, 223);
-            this.panelUcDateTime.TabIndex = 5;
-            // 
-            // ucDateTime1
-            // 
-            this.ucDateTime1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ucDateTime1.Location = new System.Drawing.Point(82, 71);
-            this.ucDateTime1.Margin = new System.Windows.Forms.Padding(2);
-            this.ucDateTime1.Name = "ucDateTime1";
-            this.ucDateTime1.Size = new System.Drawing.Size(232, 83);
-            this.ucDateTime1.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -178,7 +158,7 @@
             "^",
             "&",
             "*"});
-            this.comboBox1.Location = new System.Drawing.Point(354, 10);
+            this.comboBox1.Location = new System.Drawing.Point(354, 7);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(67, 26);
             this.comboBox1.TabIndex = 6;
@@ -197,6 +177,7 @@
             // 
             this.PanelLeft.BackColor = System.Drawing.SystemColors.Control;
             this.PanelLeft.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PanelLeft.Controls.Add(this.panelUcDateTime);
             this.PanelLeft.Controls.Add(this.DateTimeBtn);
             this.PanelLeft.Controls.Add(this.Printing5);
             this.PanelLeft.Controls.Add(this.Printing4);
@@ -208,6 +189,15 @@
             this.PanelLeft.Name = "PanelLeft";
             this.PanelLeft.Size = new System.Drawing.Size(136, 455);
             this.PanelLeft.TabIndex = 0;
+            // 
+            // panelUcDateTime
+            // 
+            this.panelUcDateTime.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelUcDateTime.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelUcDateTime.Location = new System.Drawing.Point(0, 204);
+            this.panelUcDateTime.Name = "panelUcDateTime";
+            this.panelUcDateTime.Size = new System.Drawing.Size(132, 142);
+            this.panelUcDateTime.TabIndex = 6;
             // 
             // DateTimeBtn
             // 
@@ -221,7 +211,7 @@
             this.DateTimeBtn.Name = "DateTimeBtn";
             this.DateTimeBtn.Size = new System.Drawing.Size(132, 34);
             this.DateTimeBtn.TabIndex = 5;
-            this.DateTimeBtn.Text = "   date";
+            this.DateTimeBtn.Text = "    date";
             this.DateTimeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.DateTimeBtn.UseVisualStyleBackColor = true;
             this.DateTimeBtn.Click += new System.EventHandler(this.DateTime_Click);
@@ -238,7 +228,7 @@
             this.Printing5.Name = "Printing5";
             this.Printing5.Size = new System.Drawing.Size(132, 34);
             this.Printing5.TabIndex = 4;
-            this.Printing5.Text = "Printing 5";
+            this.Printing5.Text = "  Printing 5";
             this.Printing5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Printing5.UseVisualStyleBackColor = true;
             this.Printing5.Click += new System.EventHandler(this.Printing5_Click);
@@ -255,7 +245,7 @@
             this.Printing4.Name = "Printing4";
             this.Printing4.Size = new System.Drawing.Size(132, 34);
             this.Printing4.TabIndex = 3;
-            this.Printing4.Text = "Printing 4";
+            this.Printing4.Text = "  Printing 4";
             this.Printing4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Printing4.UseVisualStyleBackColor = true;
             this.Printing4.Click += new System.EventHandler(this.Printing4_Click);
@@ -272,7 +262,7 @@
             this.Printing3.Name = "Printing3";
             this.Printing3.Size = new System.Drawing.Size(132, 34);
             this.Printing3.TabIndex = 2;
-            this.Printing3.Text = "Printing 3";
+            this.Printing3.Text = "  Printing 3";
             this.Printing3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Printing3.UseVisualStyleBackColor = true;
             this.Printing3.Click += new System.EventHandler(this.Printing3_Click);
@@ -289,7 +279,7 @@
             this.Printing2.Name = "Printing2";
             this.Printing2.Size = new System.Drawing.Size(132, 34);
             this.Printing2.TabIndex = 1;
-            this.Printing2.Text = "Printing 2";
+            this.Printing2.Text = "  Printing 2";
             this.Printing2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Printing2.UseVisualStyleBackColor = true;
             this.Printing2.Click += new System.EventHandler(this.Printing2_Click);
@@ -306,7 +296,7 @@
             this.Printing1.Name = "Printing1";
             this.Printing1.Size = new System.Drawing.Size(132, 34);
             this.Printing1.TabIndex = 0;
-            this.Printing1.Text = "Printing 1";
+            this.Printing1.Text = "  Printing 1";
             this.Printing1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Printing1.UseVisualStyleBackColor = true;
             this.Printing1.Click += new System.EventHandler(this.Printing1_Click);
@@ -405,7 +395,7 @@
             this.label2.Text = "@ PROJECT";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -416,12 +406,11 @@
             this.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PrintingPatterns";
             this.BackBasePanel.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panelUcDateTime.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.PanelLeft.ResumeLayout(false);
@@ -457,9 +446,8 @@
         private System.Windows.Forms.Label lbla2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Panel panelUcDateTime;
         private System.Windows.Forms.Button btnResetInfo;
-        private ucDateTime ucDateTime1;
+        private System.Windows.Forms.Panel panelUcDateTime;
     }
 }
 

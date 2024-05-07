@@ -37,18 +37,21 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.labelDate, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.labelDate, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 34);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 49);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(227, 36);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(144, 56);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // labelDate
@@ -56,33 +59,34 @@
             this.labelDate.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelDate.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDate.Location = new System.Drawing.Point(115, 0);
+            this.labelDate.Location = new System.Drawing.Point(4, 23);
             this.labelDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(110, 36);
+            this.labelDate.Size = new System.Drawing.Size(136, 31);
             this.labelDate.TabIndex = 1;
             this.labelDate.Text = "lblDate";
-            this.labelDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(2, 0);
+            this.label1.Location = new System.Drawing.Point(4, 2);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 36);
+            this.label1.Size = new System.Drawing.Size(136, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Date:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ucButtons1
             // 
+            this.ucButtons1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ucButtons1.Font = new System.Drawing.Font("Yu Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucButtons1.Location = new System.Drawing.Point(196, 2);
+            this.ucButtons1.Location = new System.Drawing.Point(112, 2);
             this.ucButtons1.Name = "ucButtons1";
-            this.ucButtons1.Size = new System.Drawing.Size(34, 29);
+            this.ucButtons1.Size = new System.Drawing.Size(35, 29);
             this.ucButtons1.TabIndex = 1;
             this.ucButtons1.Load += new System.EventHandler(this.ucButtons1_Load);
             // 
@@ -95,7 +99,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ucDateTime";
-            this.Size = new System.Drawing.Size(232, 83);
+            this.Size = new System.Drawing.Size(149, 109);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

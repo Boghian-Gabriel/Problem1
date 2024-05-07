@@ -6,11 +6,13 @@ using System.Windows.Forms;
 
 namespace PrintingPatterns
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         #region "Properties"
         DateTime localDate;
         readonly StringBuilder stringBuilder = new StringBuilder();
+        ucDateTime ucDateTime;
+        int flag = 1;
 
         /// <summary>
         /// Properties for moving the window with the mouse
@@ -25,7 +27,7 @@ namespace PrintingPatterns
         #endregion
 
         #region "Constructor"
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             
@@ -40,7 +42,7 @@ namespace PrintingPatterns
             comboBox1.Items.Add(Constants.SelectComboBox);
             comboBox1.SelectedItem = Constants.SelectComboBox;
             localDate = DateTime.Now;
-            DateTimeBtn.Text = localDate.ToString("dd.MM.yyyy");
+            DateTimeBtn.Text = localDate.ToString("  dd.MM.yyyy");
             SetToolTip();
 
         }
@@ -50,21 +52,6 @@ namespace PrintingPatterns
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        #endregion
-
-        #region "User control DateTime"
-        private void DateTime_Click(object sender, EventArgs e)
-        {
-            //to do...
-            ucDateTime ucDateTime = new ucDateTime
-            {
-                Dock = DockStyle.Fill
-            };
-
-            panelUcDateTime.Controls.Add(ucDateTime);
-            panelUcDateTime.Visible = true;
-            ucDateTime.BringToFront();
         }
         #endregion       
 
@@ -163,7 +150,6 @@ namespace PrintingPatterns
             ClearStringBuilder();
             if (IsEmpty(comboBox1, numericUpDown1))
             {
-                string simbol = comboBox1.Text;
                 int nr = int.Parse(numericUpDown1.Text);
 
                 stringBuilder.AppendLine($"Symbol: {comboBox1.Text}" + " - " + $"Number: {numericUpDown1.Text}");
@@ -195,20 +181,73 @@ namespace PrintingPatterns
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Printing3_Click(object sender, EventArgs e)
-        {            
-            ToDo();
+        {
+            //ToDo();
+            ClearStringBuilder();
+            if (IsEmpty(comboBox1, numericUpDown1))
+            {
+                int nr = int.Parse(numericUpDown1.Text);
+                stringBuilder.AppendLine($"Symbol: {comboBox1.Text}" + " - " + $"Number: {numericUpDown1.Text}");
+                stringBuilder.AppendLine("Result: ");
+                
+                for(int i = 0; i < nr; i++)
+                {
+                    for(int j = 1; j <=i+1; j++)
+                    {
+                        stringBuilder.Append($"{comboBox1.Text}");
+                    }
+                    stringBuilder.AppendLine("");
+                }
+
+                result.Text = stringBuilder.ToString();
+            }
         }
         #endregion
 
         #region "Button 4"
         /// <summary>
-        /// TO DO...
+        /// <summary>
+        /// if we select the # simbol and number equals to 5
+        /// the result is:
+        /// 
+        ///     @
+        ///    @@
+        ///   @@@
+        ///  @@@@
+        /// @@@@@
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Printing4_Click(object sender, EventArgs e)
         {
-            ToDo();           
+            //ToDo();
+            ClearStringBuilder();
+            if (IsEmpty(comboBox1, numericUpDown1))
+            {
+                int nr = int.Parse(numericUpDown1.Text);
+                stringBuilder.AppendLine($"Symbol: {comboBox1.Text}" + " - " + $"Number: {numericUpDown1.Text}");
+                stringBuilder.AppendLine("Result: ");
+
+                for (int i = 0; i < nr; i++)
+                {
+                    // Parcurge fiecare coloană
+                    for (int j = 0; j < nr - i - 1; j++)
+                    {
+                        stringBuilder.Append(" "); // Afisează spații pentru a alinia dreapta
+                    }
+
+                    for (int j = 0; j < i+1; j++)
+                    {
+                        stringBuilder.Append($"{comboBox1.Text}");
+                    }
+                    stringBuilder.AppendLine(" ");
+                }
+
+                result.Text = stringBuilder.ToString();
+            }
         }
         #endregion
 
@@ -221,6 +260,32 @@ namespace PrintingPatterns
         private void Printing5_Click(object sender, EventArgs e)
         {
             ToDo();
+        }
+        #endregion
+
+        #region "Open User control DateTime"
+        private void DateTime_Click(object sender, EventArgs e)
+        {
+            if (flag == 1)
+            {
+                panelUcDateTime.Visible = true;
+                ucDateTime = new ucDateTime
+                {
+                    Dock = DockStyle.Fill,
+                    Visible = true,                    
+                };
+                panelUcDateTime.Controls.Add(ucDateTime);
+                //ucDateTime.BringToFront();
+                flag = 0;
+                return;
+            }
+
+            if (flag == 0)
+            {
+                ucDateTime.Dispose();
+                panelUcDateTime.Visible = false;
+                flag = 1;
+            }
         }
         #endregion
 
@@ -270,6 +335,9 @@ namespace PrintingPatterns
         #endregion
 
         #region "ToolTip"
+        /// <summary>
+        /// \u0020 = ' ' (space)
+        /// </summary>
         private void SetToolTip()
         {
             HelperToolTip helperToolTip = new HelperToolTip();
@@ -277,8 +345,9 @@ namespace PrintingPatterns
             helperToolTip.SetToolTip(Printing1, "1. *\n2. *\n3. *");
             helperToolTip.SetToolTip(Printing2, "***\n**\n*");
             helperToolTip.SetToolTip(Printing3, "*\n**\n***");
-            helperToolTip.SetToolTip(Printing4, "To do...");
+            helperToolTip.SetToolTip(Printing4, "    # \r\n   ## \r\n  ### \r\n");
             helperToolTip.SetToolTip(Printing5, "To do...");
+            helperToolTip.SetToolTip(DateTimeBtn, "You can expand this option ↓ ");
         }
         #endregion
 
