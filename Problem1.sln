@@ -103,6 +103,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaximumNumbersFromArray", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintingPatterns", "PrintingPatterns\PrintingPatterns.csproj", "{63D17422-DB67-46BA-89DD-F524579A6055}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSV_To_SQLS", "CSV_To_SQLS\CSV_To_SQLS.csproj", "{D0D42DF0-CE7F-4340-BDB0-0CEF4FB33CA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -309,6 +311,10 @@ Global
 		{63D17422-DB67-46BA-89DD-F524579A6055}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63D17422-DB67-46BA-89DD-F524579A6055}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63D17422-DB67-46BA-89DD-F524579A6055}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D42DF0-CE7F-4340-BDB0-0CEF4FB33CA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D42DF0-CE7F-4340-BDB0-0CEF4FB33CA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D42DF0-CE7F-4340-BDB0-0CEF4FB33CA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D42DF0-CE7F-4340-BDB0-0CEF4FB33CA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
