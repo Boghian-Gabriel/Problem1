@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -32,14 +33,46 @@ namespace SOLID_principles
         // should be one reason to change that class.
         public static class Logging
         {
+            static void WriteLogEntry(StreamWriter sw, string msg)
+            {
+                sw.WriteLine(msg + " - " + DateTime.Now.ToString("HH:mm:ss"));
+                sw.WriteLine("-------------------------------------");
+            }
+
             public static void Log(string msg)
             {
-                string path = @"C:\\Users\\Admin\\Desktop\\Logger"+@"\log - " + System.DateTime.Today.ToString("MM-dd-yyyy") +".txt";
-                using(StreamWriter sw = File.CreateText(path))
+                //string sPath = Path.GetFullPath("Logger");
+                //if(!Directory.Exists(sPath)) { Directory.CreateDirectory(sPath); }
+                //string path = $@"{sPath}" + @"\log - " + DateTime.Today.ToString("MM-dd-yyyy") +".txt";
+                //using(StreamWriter sw = File.OpenWrite(path))
+                //{
+                //    sw.Write(msg);
+                //    sw.WriteLine(" - " + System.DateTime.Now.ToString("HH:mm:ss"));
+                //    sw.WriteLine("-------------------------------------");
+                //}
+
+                string sPath = Path.GetFullPath("Logger");
+
+                if (!Directory.Exists(sPath))
                 {
-                    sw.Write(msg);
-                    sw.WriteLine(" - " + System.DateTime.Now.ToString("HH:mm:ss"));
-                    sw.WriteLine("-------------------------------------");
+                    Directory.CreateDirectory(sPath);
+                }
+
+                string path = Path.Combine(sPath, $"log - {DateTime.Today.ToString("MM-dd-yyyy")}.txt");
+
+                if (File.Exists(path))
+                {
+                    using (StreamWriter sw = File.AppendText(path))
+                    {
+                        WriteLogEntry(sw, msg);
+                    }
+                }
+                else
+                {
+                    using (StreamWriter sw = File.CreateText(path))
+                    {
+                        WriteLogEntry(sw, msg);
+                    }
                 }
             }
         }
