@@ -70,11 +70,11 @@
     <Compile Include="UserControls\ucButtons.Designer.cs">
       <DependentUpon>ucButtons.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ucDateTime.cs">
+    <Compile Include="UserControls\ucDate.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ucDateTime.Designer.cs">
-      <DependentUpon>ucDateTime.cs</DependentUpon>
+    <Compile Include="UserControls\ucDate.Designer.cs">
+      <DependentUpon>ucDate.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -94,9 +94,10 @@
     <EmbeddedResource Include="UserControls\ucButtons.resx">
       <DependentUpon>ucButtons.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ucDateTime.resx">
-      <DependentUpon>ucDateTime.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\ucDate.resx">
+      <DependentUpon>ucDate.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

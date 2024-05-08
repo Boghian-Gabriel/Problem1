@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrintingPatterns.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +16,8 @@ namespace PrintingPatterns
         public SecondForm()
         {
             InitializeComponent();
-            ucDateTime ucDate = new ucDateTime();
-            panel1.Controls.Add(ucDate);
+            ucDate ucDt = new ucDate();
+            panel1.Controls.Add(ucDt);
         }
     }
 }

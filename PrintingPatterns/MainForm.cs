@@ -1,4 +1,5 @@
 ﻿using PrintingPatterns.Classes;
+using PrintingPatterns.UserControls;
 using System;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -11,7 +12,7 @@ namespace PrintingPatterns
         #region "Properties"
         DateTime localDate;
         readonly StringBuilder stringBuilder = new StringBuilder();
-        ucDateTime ucDateTime;
+        ucDate ucDateTime;
         int flag = 1;
 
         /// <summary>
@@ -29,8 +30,7 @@ namespace PrintingPatterns
         #region "Constructor"
         public MainForm()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
             LoadForm();
         }
         #endregion
@@ -294,15 +294,15 @@ namespace PrintingPatterns
         #region "Open User control DateTime"
         private void DateTime_Click(object sender, EventArgs e)
         {
-            //to to... bug fix: display ucDateTime
+            //to do... bug fix: display ucDateTime
             if (flag == 1)
             {
                 panelUcDateTime.Visible = true;
-                ucDateTime = new ucDateTime
-                {
-                    Dock = DockStyle.Fill,
-                    Visible = true,                    
-                };
+                ucDateTime = new ucDate();
+                //{
+                //    Dock = DockStyle.Fill,
+                //};
+                
                 panelUcDateTime.Controls.Add(ucDateTime);
                 //panelUcDateTime.BringToFront();
                 ucDateTime.BringToFront();
@@ -378,8 +378,8 @@ namespace PrintingPatterns
             helperToolTip.SetToolTip(Printing2, "***\n**\n*");
             helperToolTip.SetToolTip(Printing3, "*\n**\n***");
             helperToolTip.SetToolTip(Printing4, "    # \r\n   ## \r\n  ### \r\n");
-            helperToolTip.SetToolTip(Printing5, "To do...");
-            helperToolTip.SetToolTip(DateTimeBtn, "You can expand this option ↓ ");
+            helperToolTip.SetToolTip(Printing5, "To do...");            
+            helperToolTip.SetToolTip(DateTimeBtn, "You can expand this option ↓ or ↑  ");
         }
         #endregion
 
