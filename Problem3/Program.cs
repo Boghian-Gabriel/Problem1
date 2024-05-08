@@ -47,5 +47,6 @@ namespace Problem3
             //The program waits for you to press a key on the keyboard and then it closes
             Console.ReadKey();
         }
+        
     }
 }

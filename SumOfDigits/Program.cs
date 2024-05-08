@@ -11,9 +11,10 @@ namespace SumOfDigits
         static void Main(string[] args)
         {
             int n;
-            int sum = 0;
+            int sum = 0; 
             Console.Write("Enter a number: ");
-            n=int.Parse(Console.ReadLine());
+            n=int.Parse(Console.ReadLine()); 
+            
             while (n > 0)
             {             
                 //Extract last digit from number
@@ -23,7 +24,7 @@ namespace SumOfDigits
                 //eliminate the last digit
                 n = n / 10;
             }
-            //Display sum
+
             Console.WriteLine(sum);
         }
     }

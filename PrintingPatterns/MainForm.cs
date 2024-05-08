@@ -191,7 +191,7 @@ namespace PrintingPatterns
                 
                 for(int i = 0; i < nr; i++)
                 {
-                    for(int j = 1; j <=i+1; j++)
+                    for(int j = 0; j <=i; j++)
                     {
                         stringBuilder.Append($"{comboBox1.Text}");
                     }
@@ -255,13 +255,39 @@ namespace PrintingPatterns
         ///  *
         ///  *
         ///  **
-        ///  s***
+        ///  ***
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Printing5_Click(object sender, EventArgs e)
         {
-            ToDo();
+            //ToDo();
+            ClearStringBuilder();
+            if (IsEmpty(comboBox1, numericUpDown1))
+            {
+                int nr = int.Parse(numericUpDown1.Text);
+                stringBuilder.AppendLine($"Symbol: {comboBox1.Text}" + " - " + $"Number: {numericUpDown1.Text}");
+                stringBuilder.AppendLine("Result: ");
+
+                for (int i = 0; i < nr; i++)
+                {
+                    for (int j = i; j < nr; j++)
+                    {
+                        stringBuilder.Append($"{comboBox1.Text}");
+                    }
+                    stringBuilder.AppendLine("");
+                }
+                for (int i = 0; i < nr; i++)
+                {
+                    for (int j = 0; j <= i; j++)
+                    {
+                        stringBuilder.Append($"{comboBox1.Text}");
+                    }
+                    stringBuilder.AppendLine("");
+                }
+                result.Text = stringBuilder.ToString();
+
+            }
         }
         #endregion
 

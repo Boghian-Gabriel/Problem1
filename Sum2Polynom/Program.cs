@@ -3,7 +3,7 @@
     internal class Program
     {
         // A utility function to return maximum of two integers
-        static int max(int m, int n)
+        static int Max(int m, int n)
         {
             return (m > n) ? m : n;
         }
@@ -11,9 +11,9 @@
         // A[] represents coefficients of first polynomial
         // B[] represents coefficients of second polynomial
         // m and n are sizes of A[] and B[] respectively
-        static int[] add(int[] A, int[] B, int m, int n)
+        static int[] Add(int[] A, int[] B, int m, int n)
         {
-            int size = max(m, n);
+            int size = Max(m, n);
             int[] sum = new int[size];
 
             // Initialize the product polynomial
@@ -32,7 +32,7 @@
         }
 
         // A utility function to print a polynomial
-        static void printPoly(int[] poly, int n)
+        static void PrintPoly(int[] poly, int n)
         {
             for (int i = 0; i < n; i++)
             {
@@ -58,16 +58,22 @@
             // The following array represents
             // polynomial 1 + 2x + 4x^2
             int[] B = { -4, -2, 1, 5, 4 };
+
             int m = A.Length;
             int n = B.Length;
+
             Console.WriteLine("First polynomial is");
-            printPoly(A, m);
+            PrintPoly(A, m);
+
             Console.WriteLine("\nSecond polynomial is");
-            printPoly(B, n);
-            int[] sum = add(A, B, m, n);
-            int size = max(m, n);
+            PrintPoly(B, n);
+
+            int[] sum = Add(A, B, m, n);
+            int size = Max(m, n);
+
             Console.WriteLine("\nsum polynomial is");
-            printPoly(sum, size);
+
+            PrintPoly(sum, size);
 
         }
     }

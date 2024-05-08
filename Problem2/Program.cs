@@ -8,15 +8,19 @@ namespace Problem2
 {
     internal class Program
     {
-		/*Un program sa obtina in cel mai scurt timp oricare din primele 5842 de numere umile. 
-		 * Un numar umil este numarul care are divizori doar puteri ale numerelor 2,3,5,7.
-Primele 20 de nr umile sunt 1,2,3,4,5,6,7,8,9,10,12,14,15,16,18,20,21,24,25,27  al 5842 este 2.000.000.000
-Input : indexul nr umil
-Output: nr umil avand indexul specificat
-Ex.
-1->1
-11->12
-17->21*/
+		/*
+			Un program sa obtina in cel mai scurt timp oricare din primele 5842 de numere umile. 
+		   
+			Un numar umil este numarul care are divizori doar puteri ale numerelor 2,3,5,7.
+			Primele 20 de nr umile sunt 1,2,3,4,5,6,7,8,9,10,12,14,15,16,18,20,21,24,25,27  al 5842 este 2.000.000.000
+			Input : indexul nr umil
+			Output: nr umil avand indexul specificat
+			Ex.
+			1->1
+			11->12
+			17->21
+		
+		 */
 		static int Humble(int n)
 		{
 			int[] humble = new int[5842];

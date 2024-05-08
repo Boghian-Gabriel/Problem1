@@ -11,9 +11,9 @@ namespace TemplateMethodDesignPattern
         static void Main(string[] args)
         {
             //BuildProject buildProject = new BuildProject();
-            
+
             //Method Template for Design Pattern
-            BuildProjectOnStaging   obj = new BuildProjectOnStaging();
+            BuildProjectOnStaging obj = new BuildProjectOnStaging();
             Console.ReadKey();
         }
     }
