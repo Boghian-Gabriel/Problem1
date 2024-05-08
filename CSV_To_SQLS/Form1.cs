@@ -16,5 +16,25 @@ namespace CSV_To_SQLS
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// to do select csv file 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSelectCSV_Click(object sender, EventArgs e)
+        {
+            //to do...
+        }
+
+        /// <summary>
+        /// to do save data to sql server
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
