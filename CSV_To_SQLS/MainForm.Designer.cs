@@ -1,6 +1,6 @@
 ﻿namespace CSV_To_SQLS
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btnSelectCSV = new System.Windows.Forms.Button();
             this.txtFilePath = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSaveFile = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -39,6 +39,7 @@
             // btnSelectCSV
             // 
             this.btnSelectCSV.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSelectCSV.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSelectCSV.FlatAppearance.BorderSize = 0;
             this.btnSelectCSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelectCSV.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -60,18 +61,20 @@
             this.txtFilePath.Size = new System.Drawing.Size(295, 23);
             this.txtFilePath.TabIndex = 1;
             // 
-            // button1
+            // btnSaveFile
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(403, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 48);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSaveFile.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSaveFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveFile.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSaveFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveFile.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveFile.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveFile.Image")));
+            this.btnSaveFile.Location = new System.Drawing.Point(403, 12);
+            this.btnSaveFile.Name = "btnSaveFile";
+            this.btnSaveFile.Size = new System.Drawing.Size(83, 48);
+            this.btnSaveFile.TabIndex = 2;
+            this.btnSaveFile.UseVisualStyleBackColor = false;
+            this.btnSaveFile.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
@@ -90,7 +93,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 117);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSaveFile);
             this.Controls.Add(this.btnSelectCSV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
@@ -106,7 +109,7 @@
 
         private System.Windows.Forms.Button btnSelectCSV;
         private System.Windows.Forms.TextBox txtFilePath;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSaveFile;
         private System.Windows.Forms.GroupBox groupBox1;
     }
 }
