@@ -45,6 +45,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPdfName = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnJSONPDF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbCloseApp)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -218,7 +220,7 @@
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(192)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(15, 373);
+            this.button1.Location = new System.Drawing.Point(15, 413);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(302, 42);
             this.button1.TabIndex = 17;
@@ -230,7 +232,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 345);
+            this.label6.Location = new System.Drawing.Point(18, 387);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 16);
             this.label6.TabIndex = 18;
@@ -238,17 +240,50 @@
             // 
             // txtPdfName
             // 
-            this.txtPdfName.Location = new System.Drawing.Point(109, 344);
+            this.txtPdfName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPdfName.Location = new System.Drawing.Point(109, 384);
             this.txtPdfName.Name = "txtPdfName";
-            this.txtPdfName.Size = new System.Drawing.Size(208, 20);
+            this.txtPdfName.Size = new System.Drawing.Size(208, 23);
             this.txtPdfName.TabIndex = 19;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(192)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(15, 332);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(149, 42);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Save to JSON";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnJSONPDF
+            // 
+            this.btnJSONPDF.BackColor = System.Drawing.Color.White;
+            this.btnJSONPDF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnJSONPDF.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(192)))));
+            this.btnJSONPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnJSONPDF.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJSONPDF.Location = new System.Drawing.Point(168, 332);
+            this.btnJSONPDF.Name = "btnJSONPDF";
+            this.btnJSONPDF.Size = new System.Drawing.Size(149, 42);
+            this.btnJSONPDF.TabIndex = 21;
+            this.btnJSONPDF.Text = "JSON- PDF";
+            this.btnJSONPDF.UseVisualStyleBackColor = false;
+            this.btnJSONPDF.Click += new System.EventHandler(this.btnJSONPDF_Click);
             // 
             // AddMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(329, 427);
+            this.ClientSize = new System.Drawing.Size(329, 468);
+            this.Controls.Add(this.btnJSONPDF);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.txtPdfName);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
@@ -289,5 +324,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtPdfName;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnJSONPDF;
     }
 }

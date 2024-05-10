@@ -11,6 +11,11 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
 using CSV_To_SQLS.Classes;
+using System.Runtime.Serialization.Json;
+using System.Web.Script.Serialization;
+using System.Xml;
+using Newtonsoft.Json;
+using Formatting = Newtonsoft.Json.Formatting;
 
 namespace CSV_To_SQLS
 {
@@ -126,7 +131,6 @@ namespace CSV_To_SQLS
 
                 document.Add(p);
 
-
                 PdfPTable table = new PdfPTable(3);
                 table.WidthPercentage = 50; // Table width is 50% of the page
                 table.HorizontalAlignment = Element.ALIGN_CENTER; // Align table to center
@@ -146,11 +150,44 @@ namespace CSV_To_SQLS
 
                 document.Add(table);
                 document.Close();
+
+                MessageBox.Show("File saved successfully:", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPdfName.Text = string.Empty;
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                MessageBox.Show("Error:" + ex.Message,"Error", MessageBoxButtons.OK,MessageBoxIcon.Error); 
             }
-        }                   
+        }
+
+        #region "Save to JSON FILE"
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string jsonFilePath = Utils.FilePath + @"\JSON\1.json";
+
+            string json = JsonConvert.SerializeObject(_movies, Formatting.Indented);
+            File.WriteAllText(jsonFilePath, json);
+
+        }
+        #endregion
+
+        private void btnJSONPDF_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = Utils.FilePath + @"\JSON";
+            openFileDialog.Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
+            openFileDialog.RestoreDirectory = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string json = File.ReadAllText(openFileDialog.FileName);
+                _movies = JsonConvert.DeserializeObject<List<Movie>>(json);
+
+               
+
+                MessageBox.Show("Movies loaded successfully!");
+            }
+        }
     }
 }
