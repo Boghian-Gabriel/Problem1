@@ -12,30 +12,35 @@ namespace CSV_To_SQLS.Classes
     {
         public DataTable ReadFromCSVFile(string sFilePath)
         {
-
-            //to do add info in dataGridView
-            // Read CSV file into DataTable
             DataTable dataTable = new DataTable();
-            using (StreamReader reader = new StreamReader(sFilePath))
+
+            try
             {
-                string[] headers = reader.ReadLine().Split(';');
-                foreach (string header in headers)
+                using (StreamReader reader = new StreamReader(sFilePath))
                 {
-                    dataTable.Columns.Add(header);
-                }
-
-                while (!reader.EndOfStream)
-                {
-                    string[] rows = reader.ReadLine().Split(';');
-                    DataRow dataRow = dataTable.NewRow();
-                    for (int i = 0; i < headers.Length; i++)
+                    string[] headers = reader.ReadLine().Split(';');
+                    foreach (string header in headers)
                     {
-                        dataRow[i] = rows[i];
+                        dataTable.Columns.Add(header);
                     }
-                    dataTable.Rows.Add(dataRow);
-                }
-            }
 
+                    while (!reader.EndOfStream)
+                    {
+                        string[] rows = reader.ReadLine().Split(';');
+                        DataRow dataRow = dataTable.NewRow();
+                        for (int i = 0; i < headers.Length; i++)
+                        {
+                            dataRow[i] = rows[i];
+                        }
+                        dataTable.Rows.Add(dataRow);
+                    }
+                }
+                return dataTable;
+
+            } catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             return dataTable;
         }
     }

@@ -301,9 +301,9 @@ namespace CSV_To_SQLS
         #region "Back to select module form"
         private void pbBack_Click(object sender, EventArgs e)
         {
-            SelecModule selecModule = new SelecModule();
-            this.Hide();
-            selecModule.ShowDialog();
+            //SelecModule selecModule = new SelecModule();
+            //this.Hide();
+            //selecModule.ShowDialog();
             this.Close();
         }
         #endregion
