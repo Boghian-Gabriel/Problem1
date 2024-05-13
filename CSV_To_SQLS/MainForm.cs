@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.IO;
 using System.Windows.Forms;
 using ToolTip = System.Windows.Forms.ToolTip;
 
@@ -10,23 +7,36 @@ namespace CSV_To_SQLS
     public partial class MainForm : Form
     {
         readonly ToolTip toolTip = new ToolTip();
-        readonly string FolderPath = Path.GetFullPath(Application.StartupPath);
-        OpenFileDialog openFileDialog1;
-        private List<Movie> movies = new List<Movie>(); 
-        Movie movie = new Movie();
         public MainForm()
         {
             InitializeComponent();
             SetToolTipToComponents();
             pbCloseApp.Visible = false;
+            CheckRows();
         }
 
+        #region "Toll Tip"
         public void SetToolTipToComponents()
         {
             toolTip.SetToolTip(btnSelectCSV, "Select csv file");
             toolTip.SetToolTip(btnSaveFile, "Save to database");
             toolTip.SetToolTip(pbCloseApp, "Close app");
         }
+        #endregion
+
+        #region "Check if exist rows in data gridview"
+        private void CheckRows()
+        {
+            if(dgMovies.Rows.Count == 0) 
+            {
+                labelCount.Text = "No records";
+            }
+            else
+            {
+                labelCount.Text = dgMovies.Rows.Count.ToString();
+            }
+        }
+        #endregion
 
         #region "Select file from PC"
         /// <summary>
@@ -45,7 +55,6 @@ namespace CSV_To_SQLS
 
                 //to do add info in dataGridView
             }
-
         }
         #endregion
 
@@ -57,7 +66,10 @@ namespace CSV_To_SQLS
         /// <param name="e"></param>
         private void btnSaveFile_Click(object sender, EventArgs e)
         {
-             
+             //to do...
+             /*
+              read data from csv file and add into GridView DataSource 
+              */
         }
         #endregion
 
@@ -80,8 +92,6 @@ namespace CSV_To_SQLS
         {
             this.Close();
         }
-        #endregion
-
-       
+        #endregion       
     }
 }

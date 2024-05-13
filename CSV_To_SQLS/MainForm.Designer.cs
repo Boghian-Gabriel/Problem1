@@ -30,48 +30,39 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pbCloseApp = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnSelectCSV = new System.Windows.Forms.Button();
-            this.btnSaveFile = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.groupBoxDisplay = new System.Windows.Forms.GroupBox();
             this.dgMovies = new System.Windows.Forms.DataGridView();
+            this.labelCount = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pbCloseApp = new System.Windows.Forms.PictureBox();
+            this.btnSelectCSV = new System.Windows.Forms.Button();
+            this.btnSaveFile = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCloseApp)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBoxDisplay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMovies)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCloseApp)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.labelCount);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.pbCloseApp);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBoxDisplay);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(502, 392);
+            this.panel1.Size = new System.Drawing.Size(502, 408);
             this.panel1.TabIndex = 7;
-            // 
-            // pbCloseApp
-            // 
-            this.pbCloseApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbCloseApp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCloseApp.Image = ((System.Drawing.Image)(resources.GetObject("pbCloseApp.Image")));
-            this.pbCloseApp.Location = new System.Drawing.Point(464, 7);
-            this.pbCloseApp.Name = "pbCloseApp";
-            this.pbCloseApp.Size = new System.Drawing.Size(24, 24);
-            this.pbCloseApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCloseApp.TabIndex = 10;
-            this.pbCloseApp.TabStop = false;
-            this.pbCloseApp.Click += new System.EventHandler(this.pbCloseApp_Click);
             // 
             // label1
             // 
@@ -101,37 +92,6 @@
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Steps:";
-            // 
-            // btnSelectCSV
-            // 
-            this.btnSelectCSV.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSelectCSV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSelectCSV.FlatAppearance.BorderSize = 0;
-            this.btnSelectCSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelectCSV.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelectCSV.Image = ((System.Drawing.Image)(resources.GetObject("btnSelectCSV.Image")));
-            this.btnSelectCSV.Location = new System.Drawing.Point(7, 22);
-            this.btnSelectCSV.Name = "btnSelectCSV";
-            this.btnSelectCSV.Size = new System.Drawing.Size(67, 48);
-            this.btnSelectCSV.TabIndex = 0;
-            this.btnSelectCSV.UseVisualStyleBackColor = false;
-            this.btnSelectCSV.Click += new System.EventHandler(this.btnSelectCSV_Click);
-            // 
-            // btnSaveFile
-            // 
-            this.btnSaveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveFile.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSaveFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveFile.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSaveFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveFile.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveFile.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveFile.Image")));
-            this.btnSaveFile.Location = new System.Drawing.Point(401, 22);
-            this.btnSaveFile.Name = "btnSaveFile";
-            this.btnSaveFile.Size = new System.Drawing.Size(67, 48);
-            this.btnSaveFile.TabIndex = 2;
-            this.btnSaveFile.UseVisualStyleBackColor = false;
-            this.btnSaveFile.Click += new System.EventHandler(this.btnSaveFile_Click);
             // 
             // groupBox1
             // 
@@ -166,7 +126,7 @@
             this.groupBoxDisplay.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBoxDisplay.Location = new System.Drawing.Point(14, 159);
             this.groupBoxDisplay.Name = "groupBoxDisplay";
-            this.groupBoxDisplay.Size = new System.Drawing.Size(474, 226);
+            this.groupBoxDisplay.Size = new System.Drawing.Size(474, 220);
             this.groupBoxDisplay.TabIndex = 7;
             this.groupBoxDisplay.TabStop = false;
             this.groupBoxDisplay.Text = "Movies:";
@@ -177,15 +137,84 @@
             this.dgMovies.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgMovies.Location = new System.Drawing.Point(3, 19);
             this.dgMovies.Name = "dgMovies";
-            this.dgMovies.Size = new System.Drawing.Size(468, 204);
+            this.dgMovies.Size = new System.Drawing.Size(468, 198);
             this.dgMovies.TabIndex = 0;
+            // 
+            // labelCount
+            // 
+            this.labelCount.BackColor = System.Drawing.Color.Transparent;
+            this.labelCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelCount.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCount.ForeColor = System.Drawing.Color.White;
+            this.labelCount.Location = new System.Drawing.Point(211, 379);
+            this.labelCount.Name = "labelCount";
+            this.labelCount.Size = new System.Drawing.Size(91, 23);
+            this.labelCount.TabIndex = 18;
+            this.labelCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(17, 379);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(188, 23);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Total number of records:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pbCloseApp
+            // 
+            this.pbCloseApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbCloseApp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCloseApp.Image = global::CSV_To_SQLS.Properties.Resources.close1;
+            this.pbCloseApp.Location = new System.Drawing.Point(464, 7);
+            this.pbCloseApp.Name = "pbCloseApp";
+            this.pbCloseApp.Size = new System.Drawing.Size(24, 24);
+            this.pbCloseApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCloseApp.TabIndex = 10;
+            this.pbCloseApp.TabStop = false;
+            this.pbCloseApp.Click += new System.EventHandler(this.pbCloseApp_Click);
+            // 
+            // btnSelectCSV
+            // 
+            this.btnSelectCSV.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSelectCSV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSelectCSV.FlatAppearance.BorderSize = 0;
+            this.btnSelectCSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectCSV.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectCSV.Image = global::CSV_To_SQLS.Properties.Resources.plus_1_;
+            this.btnSelectCSV.Location = new System.Drawing.Point(7, 22);
+            this.btnSelectCSV.Name = "btnSelectCSV";
+            this.btnSelectCSV.Size = new System.Drawing.Size(67, 48);
+            this.btnSelectCSV.TabIndex = 0;
+            this.btnSelectCSV.UseVisualStyleBackColor = false;
+            this.btnSelectCSV.Click += new System.EventHandler(this.btnSelectCSV_Click);
+            // 
+            // btnSaveFile
+            // 
+            this.btnSaveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveFile.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSaveFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveFile.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSaveFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveFile.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveFile.Image = global::CSV_To_SQLS.Properties.Resources.diskette;
+            this.btnSaveFile.Location = new System.Drawing.Point(401, 22);
+            this.btnSaveFile.Name = "btnSaveFile";
+            this.btnSaveFile.Size = new System.Drawing.Size(67, 48);
+            this.btnSaveFile.TabIndex = 2;
+            this.btnSaveFile.UseVisualStyleBackColor = false;
+            this.btnSaveFile.Click += new System.EventHandler(this.btnSaveFile_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(526, 416);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(526, 447);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -194,12 +223,12 @@
             this.Text = "CSV-SQLS";
             this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbCloseApp)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBoxDisplay.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgMovies)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCloseApp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,6 +244,8 @@
         private System.Windows.Forms.GroupBox groupBoxDisplay;
         private System.Windows.Forms.DataGridView dgMovies;
         private System.Windows.Forms.PictureBox pbCloseApp;
+        private System.Windows.Forms.Label labelCount;
+        private System.Windows.Forms.Label label5;
     }
 }
 

@@ -8,7 +8,7 @@ namespace CSV_To_SQLS
     public partial class SelecModule : Form
     {
         OpenFileDialog openFileDialog1;
-        public string FolderPath { get; private set; } = Path.GetFullPath(AppContext.BaseDirectory);
+        public string FolderPath { get; private set; }
 
         public SelecModule()
         {
@@ -29,35 +29,41 @@ namespace CSV_To_SQLS
                 this.Close(); 
             }
         }
-        #endregion
+        #endregion        
 
         #region "Select Open File option"
         private void rbSelectFile_CheckedChanged(object sender, EventArgs e)
         {
-            rbSelectFile.TabStop = true;
-
-            openFileDialog1 = new OpenFileDialog
+            try
             {
-                InitialDirectory = FolderPath + @"\CSV",
-                Title = "Open File",
+                rbSelectFile.TabStop = true;
+                FolderPath = Path.GetFullPath(AppContext.BaseDirectory);
+                openFileDialog1 = new OpenFileDialog
+                {
+                    InitialDirectory = FolderPath + @"\CSV",
+                    Title = "Open File",
 
-                CheckFileExists = true,
-                CheckPathExists = true,
+                    CheckFileExists = true,
+                    CheckPathExists = true,
 
-                DefaultExt = "CSV",
-                Filter = "csv File|*.csv|Excel File|*.xlsx|All Files|*.*",
-                FilterIndex = 2,
-                RestoreDirectory = true,
+                    DefaultExt = "CSV",
+                    Filter = "csv File|*.csv|Excel File|*.xlsx|All Files|*.*",
+                    FilterIndex = 2,
+                    RestoreDirectory = true,
 
-                ReadOnlyChecked = true,
-                ShowReadOnly = true
-            };
+                    ReadOnlyChecked = true,
+                    ShowReadOnly = true
+                };
 
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    FolderPath = openFileDialog1.FileName;
+                }
+                pbCloseApp_Click(sender, e);
+            }catch(Exception ex)
             {
-                FolderPath = openFileDialog1.FileName;
+                MessageBox.Show("Error:" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-           pbCloseApp_Click(sender, e);
         }
         #endregion
 
@@ -70,11 +76,28 @@ namespace CSV_To_SQLS
 
             AddMovie addMovie = new AddMovie(list);
             var add = addMovie._movies;
-
+            this.Hide();
             addMovie.ShowDialog();
 
             this.Close();
 
+        }
+        #endregion
+
+        #region "Back to main  form"
+
+        private void pbBack_Click(object sender, EventArgs e)
+        {
+            Reset();
+            this.Close();
+        }
+        #endregion
+
+        #region "Reset select module"
+        private void Reset()
+        {
+            rbSelectFile.TabStop = false;
+            rbAddMovieForm.TabStop = false;
         }
         #endregion
     }
