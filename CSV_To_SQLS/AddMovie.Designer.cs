@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMovie));
             this.label1 = new System.Windows.Forms.Label();
-            this.pbCloseApp = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtGenre = new System.Windows.Forms.TextBox();
@@ -39,17 +38,21 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtTile = new System.Windows.Forms.TextBox();
             this.dtReleaseDate = new System.Windows.Forms.DateTimePicker();
-            this.btnSaveMovie = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.labelCount = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtPdfName = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btnJSONPDF = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCloseApp)).BeginInit();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pbBack = new System.Windows.Forms.PictureBox();
+            this.btnSaveMovie = new System.Windows.Forms.Button();
+            this.pbCloseApp = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCloseApp)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -64,19 +67,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Add Movie";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pbCloseApp
-            // 
-            this.pbCloseApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbCloseApp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCloseApp.Image = ((System.Drawing.Image)(resources.GetObject("pbCloseApp.Image")));
-            this.pbCloseApp.Location = new System.Drawing.Point(293, 12);
-            this.pbCloseApp.Name = "pbCloseApp";
-            this.pbCloseApp.Size = new System.Drawing.Size(24, 24);
-            this.pbCloseApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCloseApp.TabIndex = 12;
-            this.pbCloseApp.TabStop = false;
-            this.pbCloseApp.Click += new System.EventHandler(this.pbCloseApp_Click);
             // 
             // groupBox1
             // 
@@ -171,23 +161,6 @@
             this.dtReleaseDate.Size = new System.Drawing.Size(171, 23);
             this.dtReleaseDate.TabIndex = 5;
             // 
-            // btnSaveMovie
-            // 
-            this.btnSaveMovie.BackColor = System.Drawing.Color.White;
-            this.btnSaveMovie.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveMovie.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(192)))));
-            this.btnSaveMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveMovie.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveMovie.Location = new System.Drawing.Point(15, 284);
-            this.btnSaveMovie.Name = "btnSaveMovie";
-            this.btnSaveMovie.Size = new System.Drawing.Size(302, 42);
-            this.btnSaveMovie.TabIndex = 14;
-            this.btnSaveMovie.Text = "Save";
-            this.btnSaveMovie.UseVisualStyleBackColor = false;
-            this.btnSaveMovie.Click += new System.EventHandler(this.button1_Click);
-            this.btnSaveMovie.MouseLeave += new System.EventHandler(this.btnSaveMovie_MouseLeave);
-            this.btnSaveMovie.MouseHover += new System.EventHandler(this.button1_MouseHover);
-            // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
@@ -220,7 +193,7 @@
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(192)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(15, 413);
+            this.button1.Location = new System.Drawing.Point(15, 429);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(302, 42);
             this.button1.TabIndex = 17;
@@ -228,22 +201,13 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 387);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 16);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "PDF NAME:";
-            // 
             // txtPdfName
             // 
+            this.txtPdfName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPdfName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPdfName.Location = new System.Drawing.Point(109, 384);
+            this.txtPdfName.Location = new System.Drawing.Point(3, 17);
             this.txtPdfName.Name = "txtPdfName";
-            this.txtPdfName.Size = new System.Drawing.Size(208, 23);
+            this.txtPdfName.Size = new System.Drawing.Size(296, 23);
             this.txtPdfName.TabIndex = 19;
             // 
             // button2
@@ -253,7 +217,7 @@
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(192)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(15, 332);
+            this.button2.Location = new System.Drawing.Point(15, 381);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 42);
             this.button2.TabIndex = 20;
@@ -268,24 +232,79 @@
             this.btnJSONPDF.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(192)))));
             this.btnJSONPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJSONPDF.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJSONPDF.Location = new System.Drawing.Point(168, 332);
+            this.btnJSONPDF.Location = new System.Drawing.Point(170, 381);
             this.btnJSONPDF.Name = "btnJSONPDF";
-            this.btnJSONPDF.Size = new System.Drawing.Size(149, 42);
+            this.btnJSONPDF.Size = new System.Drawing.Size(147, 42);
             this.btnJSONPDF.TabIndex = 21;
             this.btnJSONPDF.Text = "JSON- PDF";
             this.btnJSONPDF.UseVisualStyleBackColor = false;
             this.btnJSONPDF.Click += new System.EventHandler(this.btnJSONPDF_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtPdfName);
+            this.groupBox2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(15, 333);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(302, 42);
+            this.groupBox2.TabIndex = 22;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "FileName";
+            // 
+            // pbBack
+            // 
+            this.pbBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbBack.Location = new System.Drawing.Point(12, 12);
+            this.pbBack.Name = "pbBack";
+            this.pbBack.Size = new System.Drawing.Size(24, 24);
+            this.pbBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBack.TabIndex = 23;
+            this.pbBack.TabStop = false;
+            this.pbBack.Click += new System.EventHandler(this.pbBack_Click);
+            // 
+            // btnSaveMovie
+            // 
+            this.btnSaveMovie.BackColor = System.Drawing.Color.White;
+            this.btnSaveMovie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveMovie.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(192)))));
+            this.btnSaveMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveMovie.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveMovie.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveMovie.Image")));
+            this.btnSaveMovie.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveMovie.Location = new System.Drawing.Point(15, 284);
+            this.btnSaveMovie.Name = "btnSaveMovie";
+            this.btnSaveMovie.Size = new System.Drawing.Size(302, 42);
+            this.btnSaveMovie.TabIndex = 14;
+            this.btnSaveMovie.Text = "Add";
+            this.btnSaveMovie.UseVisualStyleBackColor = false;
+            this.btnSaveMovie.Click += new System.EventHandler(this.button1_Click);
+            this.btnSaveMovie.MouseLeave += new System.EventHandler(this.btnSaveMovie_MouseLeave);
+            this.btnSaveMovie.MouseHover += new System.EventHandler(this.button1_MouseHover);
+            // 
+            // pbCloseApp
+            // 
+            this.pbCloseApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbCloseApp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCloseApp.Image = ((System.Drawing.Image)(resources.GetObject("pbCloseApp.Image")));
+            this.pbCloseApp.Location = new System.Drawing.Point(293, 12);
+            this.pbCloseApp.Name = "pbCloseApp";
+            this.pbCloseApp.Size = new System.Drawing.Size(24, 24);
+            this.pbCloseApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCloseApp.TabIndex = 12;
+            this.pbCloseApp.TabStop = false;
+            this.pbCloseApp.Click += new System.EventHandler(this.pbCloseApp_Click);
             // 
             // AddMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(329, 468);
+            this.ClientSize = new System.Drawing.Size(329, 483);
+            this.Controls.Add(this.pbBack);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnJSONPDF);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.txtPdfName);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelCount);
             this.Controls.Add(this.label5);
@@ -297,12 +316,14 @@
             this.Name = "AddMovie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddMovie";
-            ((System.ComponentModel.ISupportInitialize)(this.pbCloseApp)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCloseApp)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -322,9 +343,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelCount;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtPdfName;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnJSONPDF;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.PictureBox pbBack;
     }
 }
