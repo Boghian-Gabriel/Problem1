@@ -255,6 +255,7 @@
             // 
             this.pbBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbBack.Image = global::CSV_To_SQLS.Properties.Resources.arrow1;
             this.pbBack.Location = new System.Drawing.Point(12, 12);
             this.pbBack.Name = "pbBack";
             this.pbBack.Size = new System.Drawing.Size(24, 24);

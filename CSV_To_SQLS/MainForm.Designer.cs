@@ -185,6 +185,7 @@
             this.dgMovies.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgMovies.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgMovies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMovies.Size = new System.Drawing.Size(468, 220);
             this.dgMovies.TabIndex = 0;
             // 

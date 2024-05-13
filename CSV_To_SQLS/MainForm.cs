@@ -58,7 +58,14 @@ namespace CSV_To_SQLS
 
                 ReadFromCSV readFromCSV = new ReadFromCSV();
                 DataTable dataTable = readFromCSV.ReadFromCSVFile(txtFilePath.Text);
-                dgMovies.DataSource = dataTable;    
+                if(dataTable.Rows.Count == 0)
+                {
+                    MessageBox.Show("Select other file because this is empty.","Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    dgMovies.DataSource = dataTable;
+                }
 
                 labelCount.Text = dataTable.Rows.Count.ToString();
             }
@@ -73,10 +80,6 @@ namespace CSV_To_SQLS
         /// <param name="e"></param>
         private void btnSaveFile_Click(object sender, EventArgs e)
         {
-            //to do...
-            /*
-             read data from csv file and add into GridView DataSource 
-             */
             if (string.IsNullOrEmpty(txtFilePath.Text))
             {
                 MessageBox.Show("You need to select a file","Information", MessageBoxButtons.OK,MessageBoxIcon.Warning);
@@ -86,14 +89,14 @@ namespace CSV_To_SQLS
 
             if (dgMovies.Rows.Count == 0)
             {
-                MessageBox.Show("You must choose files that contain data", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);                
+                MessageBox.Show("You must choose files that contain data", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                btnSelectCSV.Focus();
                 return;
             }
 
             try
             {
-                
-
+                //to do save to sql
             }
             catch(Exception ex) 
             {
