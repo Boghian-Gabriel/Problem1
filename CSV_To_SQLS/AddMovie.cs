@@ -171,7 +171,7 @@ namespace CSV_To_SQLS
         #region "Image path"
         private string GetPdfImagePath()
         {
-            return Utils.GetFullResourcesPath("pdf_red.png");
+            return Utils.GetFullResourcesPath("pdf_red_512.png");
         }
         #endregion
 
@@ -276,7 +276,7 @@ namespace CSV_To_SQLS
                 buttonTable.WidthPercentage = 100;
                 buttonTable.DefaultCell.Border = Rectangle.NO_BORDER;
 
-                PdfPCell buttonCell = new PdfPCell(new Phrase("@[Some_text]"));
+                PdfPCell buttonCell = new PdfPCell(new Phrase($"{DateTime.Now:dd.MM.yyyy}"));
                 buttonCell.HorizontalAlignment = Element.ALIGN_CENTER;
                 buttonCell.VerticalAlignment = Element.ALIGN_MIDDLE;
                 buttonCell.Border = Rectangle.NO_BORDER;

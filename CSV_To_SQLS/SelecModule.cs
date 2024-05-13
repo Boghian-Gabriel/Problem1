@@ -47,7 +47,7 @@ namespace CSV_To_SQLS
                     CheckPathExists = true,
 
                     DefaultExt = "CSV",
-                    Filter = "csv File|*.csv|Excel File|*.xlsx|All Files|*.*",
+                    Filter = "CSV File|*.csv|Excel File|*.xlsx|All Files|*.*",
                     FilterIndex = 2,
                     RestoreDirectory = true,
 

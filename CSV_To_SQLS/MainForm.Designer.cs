@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,9 +64,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBoxDisplay);
-            this.panel1.Location = new System.Drawing.Point(12, 27);
+            this.panel1.Location = new System.Drawing.Point(12, 37);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(502, 408);
+            this.panel1.Size = new System.Drawing.Size(502, 442);
             this.panel1.TabIndex = 7;
             // 
             // label1
@@ -126,27 +131,71 @@
             this.groupBoxDisplay.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBoxDisplay.Location = new System.Drawing.Point(14, 159);
             this.groupBoxDisplay.Name = "groupBoxDisplay";
-            this.groupBoxDisplay.Size = new System.Drawing.Size(474, 220);
+            this.groupBoxDisplay.Size = new System.Drawing.Size(474, 242);
             this.groupBoxDisplay.TabIndex = 7;
             this.groupBoxDisplay.TabStop = false;
             this.groupBoxDisplay.Text = "Movies:";
             // 
             // dgMovies
             // 
-            this.dgMovies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgMovies.AllowUserToAddRows = false;
+            this.dgMovies.AllowUserToDeleteRows = false;
+            this.dgMovies.AllowUserToResizeColumns = false;
+            this.dgMovies.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(92)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(92)))), ((int)(((byte)(148)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dgMovies.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgMovies.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgMovies.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgMovies.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgMovies.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgMovies.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgMovies.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(89)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(62)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgMovies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(92)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(92)))), ((int)(((byte)(148)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgMovies.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgMovies.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgMovies.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(192)))));
             this.dgMovies.Location = new System.Drawing.Point(3, 19);
+            this.dgMovies.MultiSelect = false;
             this.dgMovies.Name = "dgMovies";
-            this.dgMovies.Size = new System.Drawing.Size(468, 198);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(92)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgMovies.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgMovies.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgMovies.Size = new System.Drawing.Size(468, 220);
             this.dgMovies.TabIndex = 0;
             // 
             // labelCount
             // 
+            this.labelCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelCount.BackColor = System.Drawing.Color.Transparent;
             this.labelCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelCount.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCount.ForeColor = System.Drawing.Color.White;
-            this.labelCount.Location = new System.Drawing.Point(211, 379);
+            this.labelCount.Location = new System.Drawing.Point(211, 404);
             this.labelCount.Name = "labelCount";
             this.labelCount.Size = new System.Drawing.Size(91, 23);
             this.labelCount.TabIndex = 18;
@@ -154,11 +203,12 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(17, 379);
+            this.label5.Location = new System.Drawing.Point(17, 404);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(188, 23);
             this.label5.TabIndex = 17;
@@ -214,7 +264,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(526, 447);
+            this.ClientSize = new System.Drawing.Size(526, 498);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

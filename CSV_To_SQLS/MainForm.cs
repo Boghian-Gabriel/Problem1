@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CSV_To_SQLS.Classes;
+using System;
+using System.Data;
+using System.IO;
 using System.Windows.Forms;
 using ToolTip = System.Windows.Forms.ToolTip;
 
@@ -53,7 +56,11 @@ namespace CSV_To_SQLS
                 txtFilePath.Text = selecModule.FolderPath;
                 toolTip.SetToolTip(txtFilePath, $"{selecModule.FolderPath}");
 
-                //to do add info in dataGridView
+                ReadFromCSV readFromCSV = new ReadFromCSV();
+                DataTable dataTable = readFromCSV.ReadFromCSVFile(txtFilePath.Text);
+                dgMovies.DataSource = dataTable;    
+
+                labelCount.Text = dataTable.Rows.Count.ToString();
             }
         }
         #endregion
@@ -66,10 +73,32 @@ namespace CSV_To_SQLS
         /// <param name="e"></param>
         private void btnSaveFile_Click(object sender, EventArgs e)
         {
-             //to do...
-             /*
-              read data from csv file and add into GridView DataSource 
-              */
+            //to do...
+            /*
+             read data from csv file and add into GridView DataSource 
+             */
+            if (string.IsNullOrEmpty(txtFilePath.Text))
+            {
+                MessageBox.Show("You need to select a file","Information", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                btnSelectCSV.Focus();
+                return;
+            }
+
+            if (dgMovies.Rows.Count == 0)
+            {
+                MessageBox.Show("You must choose files that contain data", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);                
+                return;
+            }
+
+            try
+            {
+                
+
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show("Exception: " + ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }            
         }
         #endregion
 

@@ -63,6 +63,7 @@
     <Compile Include="AddMovie.Designer.cs">
       <DependentUpon>AddMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\ReadFromCSV.cs" />
     <Compile Include="Classes\Utils.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
