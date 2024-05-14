@@ -12,6 +12,7 @@ using Image = iTextSharp.text.Image;
 using Rectangle = iTextSharp.text.Rectangle;
 using iTextSharp.text.pdf.parser;
 using Path = System.IO.Path;
+using Font = iTextSharp.text.Font;
 
 namespace CSV_To_SQLS
 {
@@ -175,6 +176,15 @@ namespace CSV_To_SQLS
         }
         #endregion
 
+        #region "Font path"
+        private string GetFontForPdf()
+        {
+            return Utils.GetFullFontPath("Poppins-Regular.ttf");
+
+        }
+        #endregion
+
+
         #region " Crete pdf"
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -194,7 +204,17 @@ namespace CSV_To_SQLS
             try
             {
                 Document document = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
+                document.AddAuthor("@ME");
+                document.AddCreator("Saple app using iTextSharp");
+                document.AddKeywords("Template pdf");
+                document.AddSubject("Documnet subject - Steps for creating this pdf...");
+                document.AddTitle("Document title - Learning to create pdf");
 
+                var ASD = GetFontForPdf();
+
+                BaseFont baseFont = BaseFont.CreateFont(GetFontForPdf(), "Identity-H", BaseFont.EMBEDDED);
+
+                iTextSharp.text.Font poppinsFont = new iTextSharp.text.Font(baseFont, 12);
                 PdfWriter.GetInstance(document, new FileStream($"{Utils.FilePath + @"\PDF"}/{txtPdfName.Text}_{DateTimeNow}.pdf", FileMode.Create));
                 document.Open();
 
@@ -215,7 +235,7 @@ namespace CSV_To_SQLS
                 headerTable.AddCell(imageCell);
 
                 // Text cell
-                PdfPCell textCell = new PdfPCell(new Phrase("Generate pdf exmple"));
+                PdfPCell textCell = new PdfPCell(new Phrase("Generate pdf exmple", poppinsFont));
                 textCell.HorizontalAlignment = Element.ALIGN_CENTER;
                 textCell.VerticalAlignment = Element.ALIGN_MIDDLE;
                 textCell.Border = Rectangle.NO_BORDER;
@@ -232,17 +252,17 @@ namespace CSV_To_SQLS
                 moviesTable.WidthPercentage = 70; // Table width is 70% of the page
 
                 // Add headers
-                PdfPCell titleHeaderCell = new PdfPCell(new Phrase("Title"));
+                PdfPCell titleHeaderCell = new PdfPCell(new Phrase("Title", poppinsFont));
                 titleHeaderCell.HorizontalAlignment = Element.ALIGN_CENTER;
                 titleHeaderCell.Border = Rectangle.BOTTOM_BORDER;
                 moviesTable.AddCell(titleHeaderCell);
 
-                PdfPCell genreHeaderCell = new PdfPCell(new Phrase("Genre"));
+                PdfPCell genreHeaderCell = new PdfPCell(new Phrase("Genre", poppinsFont));
                 genreHeaderCell.HorizontalAlignment = Element.ALIGN_CENTER;
                 genreHeaderCell.Border = Rectangle.BOTTOM_BORDER;
                 moviesTable.AddCell(genreHeaderCell);
 
-                PdfPCell releaseDateHeaderCell = new PdfPCell(new Phrase("Release Date"));
+                PdfPCell releaseDateHeaderCell = new PdfPCell(new Phrase("Release Date", poppinsFont));
                 releaseDateHeaderCell.HorizontalAlignment = Element.ALIGN_CENTER;
                 releaseDateHeaderCell.Border = Rectangle.BOTTOM_BORDER;
                 moviesTable.AddCell(releaseDateHeaderCell);
@@ -260,7 +280,7 @@ namespace CSV_To_SQLS
                     genreCell.Border = Rectangle.NO_BORDER;
                     moviesTable.AddCell(genreCell);
 
-                    PdfPCell releaseDateCell = new PdfPCell(new Phrase(movie.ReleaseDate.ToString("dd.MM.yyyy")));
+                    PdfPCell releaseDateCell = new PdfPCell(new Phrase(movie.ReleaseDate.ToString("dd.MM.yyyy"),poppinsFont));
                     releaseDateCell.HorizontalAlignment = Element.ALIGN_CENTER;
                     releaseDateCell.Border = Rectangle.NO_BORDER;
                     moviesTable.AddCell(releaseDateCell);
