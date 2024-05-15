@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace RichTextBox
 {
-    public partial class Form1 : Form
+    public partial class FRichTextBox : Form
     {
         Person personInfo;
-        public Form1()
+        public FRichTextBox()
         {
             InitializeComponent();
             lblFooter.Text = DateTime.Now.ToString("dd.MM.yyyy");
@@ -33,16 +33,27 @@ namespace RichTextBox
             };
 
             rchTextBoxInformation.SelectionBullet = true;
-            rchTextBoxInformation.AppendText($"First name: {personInfo.FirstName}\n");
-            rchTextBoxInformation.AppendText($"Last name: {personInfo.LastName}\n");
+
+            rchTextBoxInformation.SelectionFont = new Font("Arial", 16);
+            rchTextBoxInformation.SelectionColor = Color.DarkRed;
+            rchTextBoxInformation.SelectedText = $"First name: {personInfo.FirstName}\n";
+
+            rchTextBoxInformation.SelectionFont = new Font("Arial", 12);
+            rchTextBoxInformation.SelectionColor = Color.DarkGreen;
+            rchTextBoxInformation.SelectedText = $"Last name: {personInfo.LastName}\n";
+
+
+            rchTextBoxInformation.SelectionFont = new Font("Arial", 12, FontStyle.Bold);
+            rchTextBoxInformation.SelectionColor = Color.DarkBlue;
             rchTextBoxInformation.AppendText($"Full name: {personInfo}");
+
         }
 
         private bool IsEmptyField(TextBox textBox, Label label)
         {
             if(string.IsNullOrEmpty(textBox.Text))
             {
-                MessageBox.Show($"{nameof(label.Name)} is empty", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"{label.Text} is empty", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 textBox.Focus();
                 return false;
             }

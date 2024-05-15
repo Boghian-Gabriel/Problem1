@@ -1,6 +1,6 @@
 ﻿namespace RichTextBox
 {
-    partial class Form1
+    partial class FRichTextBox
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRichTextBox));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -121,7 +121,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
             this.groupBox1.Location = new System.Drawing.Point(13, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(382, 102);
+            this.groupBox1.Size = new System.Drawing.Size(376, 102);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal information";
@@ -133,7 +133,7 @@
             this.btnAddInfo.FlatAppearance.BorderSize = 0;
             this.btnAddInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnAddInfo.Image")));
-            this.btnAddInfo.Location = new System.Drawing.Point(279, 33);
+            this.btnAddInfo.Location = new System.Drawing.Point(273, 33);
             this.btnAddInfo.Name = "btnAddInfo";
             this.btnAddInfo.Size = new System.Drawing.Size(97, 54);
             this.btnAddInfo.TabIndex = 4;
@@ -147,7 +147,7 @@
             this.txtLastName.Font = new System.Drawing.Font("Leelawadee", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(94, 64);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(177, 23);
+            this.txtLastName.Size = new System.Drawing.Size(171, 23);
             this.txtLastName.TabIndex = 3;
             // 
             // txtFirstName
@@ -157,7 +157,7 @@
             this.txtFirstName.Font = new System.Drawing.Font("Leelawadee", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(94, 33);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(177, 23);
+            this.txtFirstName.Size = new System.Drawing.Size(171, 23);
             this.txtFirstName.TabIndex = 2;
             // 
             // lblLastName
@@ -215,7 +215,7 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Display Information";
             // 
-            // Form1
+            // FRichTextBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -228,7 +228,7 @@
             this.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
-            this.Name = "Form1";
+            this.Name = "FRichTextBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RichTextBox";
             this.panel1.ResumeLayout(false);
