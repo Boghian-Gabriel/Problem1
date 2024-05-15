@@ -105,6 +105,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintingPatterns", "Printin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSV_To_SQLS", "CSV_To_SQLS\CSV_To_SQLS.csproj", "{D0D42DF0-CE7F-4340-BDB0-0CEF4FB33CA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RichTextBox", "RichTextBox\RichTextBox.csproj", "{731D1E29-33F9-42D5-98E0-2E8544533D55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -315,6 +317,10 @@ Global
 		{D0D42DF0-CE7F-4340-BDB0-0CEF4FB33CA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0D42DF0-CE7F-4340-BDB0-0CEF4FB33CA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0D42DF0-CE7F-4340-BDB0-0CEF4FB33CA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{731D1E29-33F9-42D5-98E0-2E8544533D55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{731D1E29-33F9-42D5-98E0-2E8544533D55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{731D1E29-33F9-42D5-98E0-2E8544533D55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{731D1E29-33F9-42D5-98E0-2E8544533D55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
