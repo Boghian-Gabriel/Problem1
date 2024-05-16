@@ -10,9 +10,6 @@ using Newtonsoft.Json;
 using Formatting = Newtonsoft.Json.Formatting;
 using Image = iTextSharp.text.Image;
 using Rectangle = iTextSharp.text.Rectangle;
-using iTextSharp.text.pdf.parser;
-using Path = System.IO.Path;
-using Font = iTextSharp.text.Font;
 
 namespace CSV_To_SQLS
 {
@@ -38,13 +35,13 @@ namespace CSV_To_SQLS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtTile.Text))
+            if (string.IsNullOrEmpty(txtTile.Text))
             {
                 MessageBox.Show("Plese fill the Title field", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 FocusFirstTxtBox();
                 return;
             }
-            if (String.IsNullOrEmpty(txtGenre.Text))
+            if (string.IsNullOrEmpty(txtGenre.Text))
             {
                 MessageBox.Show("Plese fill the Genre field", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtGenre.Focus();
@@ -57,7 +54,6 @@ namespace CSV_To_SQLS
                 dtReleaseDate.Focus();
                 return;
             }
-
 
             _movies.Add(new Movie
                {
