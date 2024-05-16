@@ -13,7 +13,7 @@ namespace CSV_To_SQLS
     {
 
         private static readonly string  connectionString = ConfigurationManager.ConnectionStrings["ConnectionStringMovie"].ToString();
-
+        //
         private readonly SqlConnection _connection;
 
         public  DatabaseHelper() 
