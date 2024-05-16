@@ -149,7 +149,7 @@
             this.txtTile.Location = new System.Drawing.Point(116, 3);
             this.txtTile.Name = "txtTile";
             this.txtTile.Size = new System.Drawing.Size(171, 23);
-            this.txtTile.TabIndex = 3;
+            this.txtTile.TabIndex = 0;
             // 
             // dtReleaseDate
             // 
