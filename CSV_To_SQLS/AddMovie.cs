@@ -10,8 +10,6 @@ using Newtonsoft.Json;
 using Formatting = Newtonsoft.Json.Formatting;
 using Image = iTextSharp.text.Image;
 using Rectangle = iTextSharp.text.Rectangle;
-using iTextSharp.text.pdf.parser;
-using Path = System.IO.Path;
 
 namespace CSV_To_SQLS
 {
@@ -37,13 +35,13 @@ namespace CSV_To_SQLS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtTile.Text))
+            if (string.IsNullOrEmpty(txtTile.Text))
             {
                 MessageBox.Show("Plese fill the Title field", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 FocusFirstTxtBox();
                 return;
             }
-            if (String.IsNullOrEmpty(txtGenre.Text))
+            if (string.IsNullOrEmpty(txtGenre.Text))
             {
                 MessageBox.Show("Plese fill the Genre field", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtGenre.Focus();
@@ -56,7 +54,6 @@ namespace CSV_To_SQLS
                 dtReleaseDate.Focus();
                 return;
             }
-
 
             _movies.Add(new Movie
                {
@@ -171,7 +168,22 @@ namespace CSV_To_SQLS
         #region "Image path"
         private string GetPdfImagePath()
         {
-            return Utils.GetFullResourcesPath("pdf_red.png");
+            return Utils.GetFullResourcesPath("pdf_red_512.png");
+        }
+        #endregion
+
+        #region "Font path"
+        private string GetRegularFontForPdf()
+        {
+            return Utils.GetFullFontPath("Poppins-Regular.ttf");
+
+        }
+        #endregion
+        #region "Font path"
+        private string GetBoldFontForPdf()
+        {
+            return Utils.GetFullFontPath("Poppins-Bold.ttf");
+
         }
         #endregion
 
@@ -194,6 +206,17 @@ namespace CSV_To_SQLS
             try
             {
                 Document document = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
+                document.AddAuthor("@ME");
+                document.AddCreator("Saple app using iTextSharp");
+                document.AddKeywords("Template pdf");
+                document.AddSubject("Documnet subject - Steps for creating this pdf...");
+                document.AddTitle("Document title - Learning to create pdf");
+
+                BaseFont poppinsRegular = BaseFont.CreateFont(GetRegularFontForPdf(), "Identity-H", BaseFont.EMBEDDED);
+                BaseFont poppinsBold = BaseFont.CreateFont(GetBoldFontForPdf(), "Identity-H", BaseFont.EMBEDDED);
+
+                iTextSharp.text.Font poppinsFontRegular = new iTextSharp.text.Font(poppinsRegular, 12);
+                iTextSharp.text.Font poppinsFontBold = new iTextSharp.text.Font(poppinsBold, 12);
 
                 PdfWriter.GetInstance(document, new FileStream($"{Utils.FilePath + @"\PDF"}/{txtPdfName.Text}_{DateTimeNow}.pdf", FileMode.Create));
                 document.Open();
@@ -215,13 +238,14 @@ namespace CSV_To_SQLS
                 headerTable.AddCell(imageCell);
 
                 // Text cell
-                PdfPCell textCell = new PdfPCell(new Phrase("Generate pdf exmple"));
+                PdfPCell textCell = new PdfPCell(new Phrase("Generate pdf exmple", poppinsFontBold));
                 textCell.HorizontalAlignment = Element.ALIGN_CENTER;
                 textCell.VerticalAlignment = Element.ALIGN_MIDDLE;
                 textCell.Border = Rectangle.NO_BORDER;
                 headerTable.AddCell(textCell);
 
                 headerTable.HorizontalAlignment = Element.ALIGN_CENTER;
+                
                 document.Add(headerTable);
 
                 // Add space
@@ -232,17 +256,17 @@ namespace CSV_To_SQLS
                 moviesTable.WidthPercentage = 70; // Table width is 70% of the page
 
                 // Add headers
-                PdfPCell titleHeaderCell = new PdfPCell(new Phrase("Title"));
+                PdfPCell titleHeaderCell = new PdfPCell(new Phrase("Title", poppinsFontRegular));
                 titleHeaderCell.HorizontalAlignment = Element.ALIGN_CENTER;
                 titleHeaderCell.Border = Rectangle.BOTTOM_BORDER;
                 moviesTable.AddCell(titleHeaderCell);
 
-                PdfPCell genreHeaderCell = new PdfPCell(new Phrase("Genre"));
+                PdfPCell genreHeaderCell = new PdfPCell(new Phrase("Genre", poppinsFontRegular));
                 genreHeaderCell.HorizontalAlignment = Element.ALIGN_CENTER;
                 genreHeaderCell.Border = Rectangle.BOTTOM_BORDER;
                 moviesTable.AddCell(genreHeaderCell);
 
-                PdfPCell releaseDateHeaderCell = new PdfPCell(new Phrase("Release Date"));
+                PdfPCell releaseDateHeaderCell = new PdfPCell(new Phrase("Release Date", poppinsFontRegular));
                 releaseDateHeaderCell.HorizontalAlignment = Element.ALIGN_CENTER;
                 releaseDateHeaderCell.Border = Rectangle.BOTTOM_BORDER;
                 moviesTable.AddCell(releaseDateHeaderCell);
@@ -260,7 +284,7 @@ namespace CSV_To_SQLS
                     genreCell.Border = Rectangle.NO_BORDER;
                     moviesTable.AddCell(genreCell);
 
-                    PdfPCell releaseDateCell = new PdfPCell(new Phrase(movie.ReleaseDate.ToString("dd.MM.yyyy")));
+                    PdfPCell releaseDateCell = new PdfPCell(new Phrase(movie.ReleaseDate.ToString("dd.MM.yyyy"), poppinsFontRegular));
                     releaseDateCell.HorizontalAlignment = Element.ALIGN_CENTER;
                     releaseDateCell.Border = Rectangle.NO_BORDER;
                     moviesTable.AddCell(releaseDateCell);
@@ -276,7 +300,7 @@ namespace CSV_To_SQLS
                 buttonTable.WidthPercentage = 100;
                 buttonTable.DefaultCell.Border = Rectangle.NO_BORDER;
 
-                PdfPCell buttonCell = new PdfPCell(new Phrase("@[Some_text]"));
+                PdfPCell buttonCell = new PdfPCell(new Phrase($"{DateTime.Now:dd.MM.yyyy}", poppinsFontBold));
                 buttonCell.HorizontalAlignment = Element.ALIGN_CENTER;
                 buttonCell.VerticalAlignment = Element.ALIGN_MIDDLE;
                 buttonCell.Border = Rectangle.NO_BORDER;
@@ -301,9 +325,9 @@ namespace CSV_To_SQLS
         #region "Back to select module form"
         private void pbBack_Click(object sender, EventArgs e)
         {
-            SelecModule selecModule = new SelecModule();
-            this.Hide();
-            selecModule.ShowDialog();
+            //SelecModule selecModule = new SelecModule();
+            //this.Hide();
+            //selecModule.ShowDialog();
             this.Close();
         }
         #endregion

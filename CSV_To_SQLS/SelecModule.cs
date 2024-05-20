@@ -47,8 +47,8 @@ namespace CSV_To_SQLS
                     CheckPathExists = true,
 
                     DefaultExt = "CSV",
-                    Filter = "csv File|*.csv|Excel File|*.xlsx|All Files|*.*",
-                    FilterIndex = 2,
+                    Filter = "CSV File|*.csv|Excel File|*.xlsx|All Files|*.*",
+                    FilterIndex = 1,
                     RestoreDirectory = true,
 
                     ReadOnlyChecked = true,
@@ -76,10 +76,9 @@ namespace CSV_To_SQLS
 
             AddMovie addMovie = new AddMovie(list);
             var add = addMovie._movies;
-            this.Hide();
+            //this.Hide();
             addMovie.ShowDialog();
-
-            this.Close();
+            //this.Close();
 
         }
         #endregion

@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,15 +12,18 @@ namespace CSV_To_SQLS.Classes
     public class Utils
     {
         public static string FilePath = Path.GetFullPath(AppContext.BaseDirectory);
-        public static string FolderResources = "Resources";
         
-        public static string GetFullResourcesPath(string sFileName)
+        private const string FolderResources = "Resources";
+        private const string FolderFonts = "Fonts";
+        
+        public static string GetFullResourcesPath(string sResourcesName)
         {
-            string sFilePath = String.Empty;
+            return Path.Combine(FilePath, FolderResources, sResourcesName);
+        }
 
-            sFilePath = Path.Combine(FilePath, FolderResources, sFileName);
-
-            return sFilePath;
+        public static string GetFullFontPath(string sFontName)
+        {
+            return Path.Combine(FilePath, FolderFonts, sFontName);
         }
     }
 }

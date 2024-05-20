@@ -31,13 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.BackBasePanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnResetInfo = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.result = new System.Windows.Forms.RichTextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.lbla2 = new System.Windows.Forms.Label();
             this.lbla1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.result = new System.Windows.Forms.RichTextBox();
+            this.btnResetInfo = new System.Windows.Forms.Button();
             this.PanelLeft = new System.Windows.Forms.Panel();
             this.panelUcDateTime = new System.Windows.Forms.Panel();
             this.DateTimeBtn = new System.Windows.Forms.Button();
@@ -54,10 +56,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BackBasePanel.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.PanelLeft.SuspendLayout();
@@ -65,8 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // BackBasePanel
@@ -91,16 +91,35 @@
             this.panel3.Size = new System.Drawing.Size(511, 455);
             this.panel3.TabIndex = 1;
             // 
-            // btnResetInfo
+            // groupBox2
             // 
-            this.btnResetInfo.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnResetInfo.Location = new System.Drawing.Point(426, 25);
-            this.btnResetInfo.Name = "btnResetInfo";
-            this.btnResetInfo.Size = new System.Drawing.Size(63, 86);
-            this.btnResetInfo.TabIndex = 6;
-            this.btnResetInfo.Text = "Reset";
-            this.btnResetInfo.UseVisualStyleBackColor = true;
-            this.btnResetInfo.Click += new System.EventHandler(this.BtnResetInfo_Click);
+            this.groupBox2.Controls.Add(this.result);
+            this.groupBox2.Location = new System.Drawing.Point(7, 124);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(489, 285);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Result:";
+            // 
+            // result
+            // 
+            this.result.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.result.Location = new System.Drawing.Point(3, 25);
+            this.result.Name = "result";
+            this.result.Size = new System.Drawing.Size(483, 257);
+            this.result.TabIndex = 0;
+            this.result.Text = "";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
+            this.groupBox1.Controls.Add(this.btnResetInfo);
+            this.groupBox1.Location = new System.Drawing.Point(7, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(492, 114);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Input:";
             // 
             // tableLayoutPanel1
             // 
@@ -163,21 +182,23 @@
             "^",
             "&",
             "*"});
-            this.comboBox1.Location = new System.Drawing.Point(354, 9);
+            this.comboBox1.Location = new System.Drawing.Point(354, 11);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(67, 26);
             this.comboBox1.TabIndex = 6;
             this.comboBox1.DropDown += new System.EventHandler(this.comboBox1_DropDown);
             this.comboBox1.DropDownClosed += new System.EventHandler(this.comboBox1_DropDownClosed);
             // 
-            // result
+            // btnResetInfo
             // 
-            this.result.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.result.Location = new System.Drawing.Point(3, 25);
-            this.result.Name = "result";
-            this.result.Size = new System.Drawing.Size(483, 257);
-            this.result.TabIndex = 0;
-            this.result.Text = "";
+            this.btnResetInfo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnResetInfo.Location = new System.Drawing.Point(426, 25);
+            this.btnResetInfo.Name = "btnResetInfo";
+            this.btnResetInfo.Size = new System.Drawing.Size(63, 86);
+            this.btnResetInfo.TabIndex = 6;
+            this.btnResetInfo.Text = "Reset";
+            this.btnResetInfo.UseVisualStyleBackColor = true;
+            this.btnResetInfo.Click += new System.EventHandler(this.BtnResetInfo_Click);
             // 
             // PanelLeft
             // 
@@ -401,27 +422,6 @@
             this.label2.Text = "@ PROJECT";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox1.Controls.Add(this.btnResetInfo);
-            this.groupBox1.Location = new System.Drawing.Point(7, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(492, 114);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Input:";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.result);
-            this.groupBox2.Location = new System.Drawing.Point(7, 124);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(489, 285);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Result:";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -438,6 +438,8 @@
             this.Text = "PrintingPatterns";
             this.BackBasePanel.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.PanelLeft.ResumeLayout(false);
@@ -445,8 +447,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
