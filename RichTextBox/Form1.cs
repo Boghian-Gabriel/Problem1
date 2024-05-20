@@ -10,13 +10,14 @@ namespace RichTextBox
     public partial class FRichTextBox : Form
     {
         Person personInfo;
+        string sFolderName= String.Empty;
         public FRichTextBox()
         {
             InitializeComponent();
             
             AddToolTip();
             lblFooter.Text = DateTime.Now.ToString("dd.MM.yyyy");
-
+            sFolderName = "Fonts";
             btnReset.Enabled = false;
             rchTextBoxInformation.Clear();
             personInfo = new Person();
@@ -25,9 +26,9 @@ namespace RichTextBox
             // for new fonts
             string sBasePath = Path.GetFullPath(AppContext.BaseDirectory);
             PrivateFontCollection pfc = new PrivateFontCollection();
-            pfc.AddFontFile($@"{sBasePath}\Font\Poppins-Bold.ttf");
-            pfc.AddFontFile($@"{sBasePath}\Font\Poppins-Medium.ttf");
-            pfc.AddFontFile($@"{sBasePath}\Font\Poppins-Semibold.ttf");
+            pfc.AddFontFile($@"{sBasePath}\{sFolderName}\Poppins-Bold.ttf");
+            pfc.AddFontFile($@"{sBasePath}\{sFolderName}\Poppins-Medium.ttf");
+            pfc.AddFontFile($@"{sBasePath}\{sFolderName}\Poppins-Bold.ttf");
             
             lblText.Font = new Font(pfc.Families[0], 12, FontStyle.Bold);
             lblFirstName.Font = new Font(pfc.Families[0], 12, FontStyle.Regular);
