@@ -61,7 +61,7 @@
             this.rbSelectFile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbSelectFile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rbSelectFile.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbSelectFile.Image = global::CSV_To_SQLS.Properties.Resources.csv1;
+            this.rbSelectFile.Image = ((System.Drawing.Image)(resources.GetObject("rbSelectFile.Image")));
             this.rbSelectFile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbSelectFile.Location = new System.Drawing.Point(3, 3);
             this.rbSelectFile.Name = "rbSelectFile";
@@ -105,7 +105,7 @@
             // 
             this.pbBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbBack.Image = global::CSV_To_SQLS.Properties.Resources.arrow1;
+            this.pbBack.Image = ((System.Drawing.Image)(resources.GetObject("pbBack.Image")));
             this.pbBack.Location = new System.Drawing.Point(15, 12);
             this.pbBack.Name = "pbBack";
             this.pbBack.Size = new System.Drawing.Size(24, 24);

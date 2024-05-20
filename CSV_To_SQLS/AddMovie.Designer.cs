@@ -255,7 +255,7 @@
             // 
             this.pbBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbBack.Image = global::CSV_To_SQLS.Properties.Resources.arrow1;
+            this.pbBack.Image = ((System.Drawing.Image)(resources.GetObject("pbBack.Image")));
             this.pbBack.Location = new System.Drawing.Point(12, 12);
             this.pbBack.Name = "pbBack";
             this.pbBack.Size = new System.Drawing.Size(24, 24);
@@ -266,18 +266,20 @@
             // 
             // btnSaveMovie
             // 
-            this.btnSaveMovie.BackColor = System.Drawing.Color.White;
+            this.btnSaveMovie.BackColor = System.Drawing.Color.SteelBlue;
             this.btnSaveMovie.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveMovie.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(192)))));
             this.btnSaveMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveMovie.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveMovie.ForeColor = System.Drawing.Color.White;
             this.btnSaveMovie.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveMovie.Image")));
-            this.btnSaveMovie.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaveMovie.Location = new System.Drawing.Point(15, 284);
             this.btnSaveMovie.Name = "btnSaveMovie";
             this.btnSaveMovie.Size = new System.Drawing.Size(302, 42);
             this.btnSaveMovie.TabIndex = 14;
-            this.btnSaveMovie.Text = "Add";
+            this.btnSaveMovie.Text = "  Add";
+            this.btnSaveMovie.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSaveMovie.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSaveMovie.UseVisualStyleBackColor = false;
             this.btnSaveMovie.Click += new System.EventHandler(this.button1_Click);
             this.btnSaveMovie.MouseLeave += new System.EventHandler(this.btnSaveMovie_MouseLeave);

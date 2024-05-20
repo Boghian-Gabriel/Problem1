@@ -63,9 +63,9 @@ namespace CSV_To_SQLS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap arrow1 {
+        internal static System.Drawing.Bitmap arrow {
             get {
-                object obj = ResourceManager.GetObject("arrow1", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace CSV_To_SQLS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap close1 {
+        internal static System.Drawing.Bitmap close {
             get {
-                object obj = ResourceManager.GetObject("close1", resourceCulture);
+                object obj = ResourceManager.GetObject("close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,39 +83,9 @@ namespace CSV_To_SQLS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap csv1 {
+        internal static System.Drawing.Bitmap csv {
             get {
-                object obj = ResourceManager.GetObject("csv1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap diskette {
-            get {
-                object obj = ResourceManager.GetObject("diskette", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pdf_red {
-            get {
-                object obj = ResourceManager.GetObject("pdf_red", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pdf_white {
-            get {
-                object obj = ResourceManager.GetObject("pdf_white", resourceCulture);
+                object obj = ResourceManager.GetObject("csv", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -125,7 +95,17 @@ namespace CSV_To_SQLS.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap plus_1_ {
             get {
-                object obj = ResourceManager.GetObject("plus_1_", resourceCulture);
+                object obj = ResourceManager.GetObject("plus(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_1_1 {
+            get {
+                object obj = ResourceManager.GetObject("plus(1)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -135,7 +115,7 @@ namespace CSV_To_SQLS.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap right_arrow {
             get {
-                object obj = ResourceManager.GetObject("right_arrow", resourceCulture);
+                object obj = ResourceManager.GetObject("right-arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
