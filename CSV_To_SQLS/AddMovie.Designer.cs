@@ -48,6 +48,7 @@
             this.pbBack = new System.Windows.Forms.PictureBox();
             this.btnSaveMovie = new System.Windows.Forms.Button();
             this.pbCloseApp = new System.Windows.Forms.PictureBox();
+            this.btnCustomPDF = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -195,7 +196,7 @@
             this.button1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(15, 429);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(302, 42);
+            this.button1.Size = new System.Drawing.Size(149, 42);
             this.button1.TabIndex = 17;
             this.button1.Text = "Create PDF";
             this.button1.UseVisualStyleBackColor = false;
@@ -266,9 +267,10 @@
             // 
             // btnSaveMovie
             // 
-            this.btnSaveMovie.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnSaveMovie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(192)))));
             this.btnSaveMovie.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveMovie.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(192)))));
+            this.btnSaveMovie.FlatAppearance.BorderSize = 0;
             this.btnSaveMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveMovie.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveMovie.ForeColor = System.Drawing.Color.White;
@@ -298,12 +300,28 @@
             this.pbCloseApp.TabStop = false;
             this.pbCloseApp.Click += new System.EventHandler(this.pbCloseApp_Click);
             // 
+            // btnCustomPDF
+            // 
+            this.btnCustomPDF.BackColor = System.Drawing.Color.White;
+            this.btnCustomPDF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCustomPDF.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(192)))));
+            this.btnCustomPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomPDF.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomPDF.Location = new System.Drawing.Point(170, 429);
+            this.btnCustomPDF.Name = "btnCustomPDF";
+            this.btnCustomPDF.Size = new System.Drawing.Size(147, 42);
+            this.btnCustomPDF.TabIndex = 24;
+            this.btnCustomPDF.Text = "Custom PDF";
+            this.btnCustomPDF.UseVisualStyleBackColor = false;
+            this.btnCustomPDF.Click += new System.EventHandler(this.btnCustomPDF_Click);
+            // 
             // AddMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(329, 483);
+            this.Controls.Add(this.btnCustomPDF);
             this.Controls.Add(this.pbBack);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnJSONPDF);
@@ -351,5 +369,6 @@
         private System.Windows.Forms.Button btnJSONPDF;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pbBack;
+        private System.Windows.Forms.Button btnCustomPDF;
     }
 }

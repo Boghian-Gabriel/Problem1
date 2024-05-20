@@ -10,6 +10,8 @@ using Newtonsoft.Json;
 using Formatting = Newtonsoft.Json.Formatting;
 using Image = iTextSharp.text.Image;
 using Rectangle = iTextSharp.text.Rectangle;
+using System.Diagnostics;
+using System.Xml.Linq;
 
 namespace CSV_To_SQLS
 {
@@ -87,13 +89,13 @@ namespace CSV_To_SQLS
         #region "Hover and Leave"
         private void button1_MouseHover(object sender, EventArgs e)
         {
-            btnSaveMovie.ForeColor = Color.FromArgb(254, 254, 254);
-            btnSaveMovie.BackColor = Color.FromArgb(76, 111, 192);
+            //btnSaveMovie.ForeColor = Color.FromArgb(254, 254, 254);
+            //btnSaveMovie.BackColor = Color.FromArgb(76, 111, 192);
         }
         private void btnSaveMovie_MouseLeave(object sender, EventArgs e)
         {
-            btnSaveMovie.ForeColor = Color.FromArgb(89, 92, 102);
-            btnSaveMovie.BackColor = Color.White;
+            //btnSaveMovie.ForeColor = Color.FromArgb(89, 92, 102);
+            //btnSaveMovie.BackColor = Color.White;
         }
         #endregion  
 
@@ -166,9 +168,9 @@ namespace CSV_To_SQLS
         #endregion
 
         #region "Image path"
-        private string GetPdfImagePath()
+        private string GetPdfImagePath(string sImageName)
         {
-            return Utils.GetFullResourcesPath("pdf_red_512.png");
+            return Utils.GetFullResourcesPath(sImageName);
         }
         #endregion
 
@@ -187,7 +189,7 @@ namespace CSV_To_SQLS
         }
         #endregion
 
-        #region " Crete pdf"
+        #region "Create pdf with values from movie json"
         private void button1_Click_1(object sender, EventArgs e)
         {
             if (_movies.Count <= 0)
@@ -227,17 +229,17 @@ namespace CSV_To_SQLS
                 headerTable.DefaultCell.Border = Rectangle.NO_BORDER;
 
                 // Image cell
-                Image image = Image.GetInstance(GetPdfImagePath()); // Provide path to your image
+                Image image = Image.GetInstance(GetPdfImagePath("pdf_red_16.png")); // Provide path to your image
                 //Resize image depend upon your need
-                image.ScaleToFit(140f, 120f);
+                image.ScaleToFit(50,50);
 
-                PdfPCell imageCell = new PdfPCell(image, true);
-                imageCell.Border = Rectangle.NO_BORDER;
-                imageCell.HorizontalAlignment = Element.ALIGN_CENTER;
+                //PdfPCell imageCell = new PdfPCell(image, true);
+                //imageCell.Border = Rectangle.NO_BORDER;                
+                //imageCell.HorizontalAlignment = Element.ALIGN_CENTER;
                 
-                headerTable.AddCell(imageCell);
+                headerTable.AddCell(image);
 
-                // Text cell
+                //  Text cell
                 PdfPCell textCell = new PdfPCell(new Phrase("Generate pdf exmple", poppinsFontBold));
                 textCell.HorizontalAlignment = Element.ALIGN_CENTER;
                 textCell.VerticalAlignment = Element.ALIGN_MIDDLE;
@@ -329,6 +331,181 @@ namespace CSV_To_SQLS
             //this.Hide();
             //selecModule.ShowDialog();
             this.Close();
+        }
+        #endregion
+
+        #region""
+        private void btnCustomPDF_Click(object sender, EventArgs e)
+        {
+            Document document = new Document(PageSize.A4, 20f, 20f, 20f, 20f);
+            try
+            {
+                //Create custom PDF
+                document.AddAuthor("@ME");
+                document.AddCreator("Saple app using iTextSharp");
+                document.AddKeywords("Template pdf");
+                document.AddSubject("Documnet subject - Steps for creating this pdf...");
+                document.AddTitle("Document title - Learning to create pdf");
+
+                BaseFont poppinsRegular = BaseFont.CreateFont(GetRegularFontForPdf(), "Identity-H", BaseFont.EMBEDDED);
+                BaseFont poppinsBold = BaseFont.CreateFont(GetBoldFontForPdf(), "Identity-H", BaseFont.EMBEDDED);
+
+                iTextSharp.text.Font poppinsFontRegular = new iTextSharp.text.Font(poppinsRegular, 12);
+                iTextSharp.text.Font poppinsFontBold = new iTextSharp.text.Font(poppinsBold, 12);
+
+                PdfWriter.GetInstance(document, new FileStream($"{Utils.FilePath + @"\PDF"}/{txtPdfName.Text}_{DateTimeNow}.pdf", FileMode.Create));
+                document.Open();
+
+                //Header 
+                PdfPTable headerTable = new PdfPTable(3);
+                float[] columnWidths = { 2f, 2f, 1f }; 
+                headerTable.SetWidths(columnWidths);
+                headerTable.WidthPercentage = 90;
+
+
+                PdfPTable cell1header = new PdfPTable(2);
+                float[] columnWidths2 = { 0.5f, 0.5f }; 
+                cell1header.SetWidths(columnWidths2);
+
+                //Row1
+                PdfPCell r1c1 = new PdfPCell(new Phrase("S.P", poppinsFontBold));
+                r1c1.Padding = 5f;
+                r1c1.Border = Rectangle.NO_BORDER;
+                PdfPCell r1c2 = new PdfPCell(new Phrase("TEXT X", poppinsFontRegular));                
+                r1c2.Padding = 5f;
+                r1c2.Border = Rectangle.BOTTOM_BORDER;
+
+                //Row2 
+                PdfPTable pt1 = new PdfPTable(2);
+                float[] columnWidths3 = { 0.5f, 0.5f };
+                pt1.SetWidths(columnWidths3);
+                PdfPCell pNr = new PdfPCell(new Phrase("Nr.", poppinsFontBold));              
+                pNr.Border = Rectangle.NO_BORDER;
+                PdfPCell pGetNr = new PdfPCell(new Phrase("4041", poppinsFontRegular));
+                pGetNr.Border = Rectangle.BOTTOM_BORDER;
+                pt1.AddCell(pNr);
+                pt1.AddCell(pGetNr);
+
+                PdfPTable pt2 = new PdfPTable(2);
+                float[] columnWidths4 = { 0.5f, 0.5f }; // For example: 1:2:3 ratio
+                pt2.SetWidths(columnWidths3);
+                PdfPCell pDin = new PdfPCell(new Phrase("Din.", poppinsFontBold));
+                pDin.Border = Rectangle.NO_BORDER;
+                PdfPCell pGetDate = new PdfPCell(new Phrase($"{DateTime.Today.ToString("dd.MM.yyyy")}", poppinsFontRegular));
+                pGetDate.Border = Rectangle.BOTTOM_BORDER;
+                
+                pt2.AddCell(pDin);
+                pt2.AddCell(pGetDate);
+                
+
+                PdfPCell r2c1 = new PdfPCell(pt1);
+               // r2c1.Padding = 5f;
+                r2c1.Border = Rectangle.NO_BORDER;
+
+                PdfPCell r2c2 = new PdfPCell(pt2);
+                //r2c2.Padding = 5f;
+                r2c2.Border = Rectangle.NO_BORDER;
+
+                //row3
+                PdfPCell r3c1 = new PdfPCell(new Phrase("Utilizator", poppinsFontBold));
+                r3c1.Padding = 5f;
+                r3c1.Border = Rectangle.NO_BORDER;
+
+                PdfPCell r3c2 = new PdfPCell(new Phrase("TEXT X", poppinsFontRegular));
+                r3c2.Padding = 5f;
+                r3c2.Border = Rectangle.BOTTOM_BORDER;
+
+                cell1header.AddCell(r1c1);
+                cell1header.AddCell(r1c2);
+
+                cell1header.AddCell(r2c1);
+                cell1header.AddCell(r2c2);
+
+                cell1header.AddCell(r3c1);
+                cell1header.AddCell(r3c2);
+
+                PdfPCell pdfCELL1 = new PdfPCell(cell1header);
+                pdfCELL1.HorizontalAlignment = Element.ALIGN_LEFT;
+                pdfCELL1.VerticalAlignment = Element.ALIGN_MIDDLE;
+                //pdfCELL1.BackgroundColor = BaseColor.WHITE;
+
+                //Cell 2 from header
+                PdfPCell textCell = new PdfPCell();
+                // Create a Paragraph to contain the phrases
+                Paragraph paragraph = new Paragraph();
+                paragraph.Alignment = Element.ALIGN_CENTER; // Set the alignment of the paragraph
+                                                            // Add phrases to the paragraph
+                Phrase phrase1 = new Phrase("AVIZAT", poppinsFontBold);
+                Phrase phrase2 = new Phrase("TEXT X,", poppinsFontBold);
+                paragraph.Add(phrase1);
+                paragraph.Add(Chunk.NEWLINE); // Add a newline between phrases
+                paragraph.Add(phrase2);
+
+                // Add the paragraph to the cell
+                textCell.AddElement(paragraph);
+
+                // Set vertical alignment of the cell
+                textCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+
+                //Cell 3 from header
+                Image image2 = Image.GetInstance(GetPdfImagePath("pdf_red_512.png"));
+                image2.ScaleToFit(15, 15);
+                image2.SetAbsolutePosition(0, 0);
+
+                PdfPCell imageCell2 = new PdfPCell(image2, true);
+                //imageCell2.Width = 25;
+                imageCell2.HorizontalAlignment = Element.ALIGN_RIGHT;
+                imageCell2.VerticalAlignment = Element.ALIGN_MIDDLE;
+
+
+                headerTable.HorizontalAlignment = Element.ALIGN_CENTER;
+
+                headerTable.AddCell(pdfCELL1);
+                headerTable.AddCell(textCell);
+                headerTable.AddCell(image2);
+
+                
+
+
+                //Body
+                //to do
+                PdfPTable pBodyTitle= new PdfPTable(1);
+                pBodyTitle.WidthPercentage = 90;
+                
+                string sBodyText = "TEXT X";
+                
+                PdfPCell pdfCell = new PdfPCell();
+                pdfCell.Padding = 10f;
+                pdfCell.Border = Rectangle.NO_BORDER;
+                Paragraph parag = new Paragraph();
+                parag.Alignment = Element.ALIGN_CENTER;
+                
+                Phrase phrase = new Phrase(sBodyText, poppinsFontBold);
+                
+                parag.Add(phrase);
+                pdfCell.AddElement(parag);
+                pBodyTitle.AddCell(pdfCell);
+
+                //Buttom
+                //to do
+
+
+                document.Add(headerTable);
+                document.Add(pBodyTitle);
+                MessageBox.Show("File saved successfully:", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception: " + ex.Message, "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                document.Close();
+            }
+            
+
         }
         #endregion
     }
